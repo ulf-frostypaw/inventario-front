@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* display: flex; */
+   /*  justify-content: center;
+    align-items: center; */
+    min-height: 100vh;
+    background: url(../img/sala.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-position: top;
+    font-family: "Poppins", sans-serif;
+}
+
+.login {
+    transform: translateY(32%);
+    margin: auto;
+    max-width: 28rem;
+    max-height: 35rem;
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    background-color: #fff;
+    border: none;
+    border-radius: .8rem;
+    box-shadow: 0rem 0rem .5rem black;
+}
+
+.login h1 {
+    font-weight: 600;
+    font-size: 3.5rem;
+    text-align: center;
+    color: rgba(0, 0, 0);
+}
+
+.login .inputBox {
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    position: relative;
+}
+
+.login .inputBox input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+    border: 2px solid rgba(0, 0, 0, .4);
+    padding: 0 3rem 0 1rem;
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, .8);
+    
+}
+
+.login .inputBox .icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, .7);
+}
+
+.login form .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: .9rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+
+}
+
+.login form .remember-forgot a {
+    color: rgba(0, 0, 0);
+    text-decoration: none;
+}
+
+.login form .remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.login form .createAccount {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;   
+    font-size: .9rem; 
+    font-weight: 500;
+}
+
+.login form .createAccount a {
+    color: rgba(0, 0, 0);
+    text-decoration: none;
+}
+
+.login form .createAccount a:hover {
+    text-decoration: underline;
+}
+
+.login form button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: #293efa;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.login form button:hover {
+    background-color: #1e2ff3;
+}
