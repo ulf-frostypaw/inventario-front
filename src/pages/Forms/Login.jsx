@@ -1,7 +1,8 @@
+
 import React, { useState } from "react";
-import "../styles/Login.css";
-import User from "./icons/User";
-import Pass from "./icons/Pass";
+import "../../styles/Login.css";
+/* import User from "../../icons/User";
+import Pass from "../../icons/Pass"; */
 
 export default function Login() {
   // const [username, setUsername] = useState("");
@@ -20,11 +21,11 @@ export default function Login() {
             <h1>Login</h1>
             <div className="inputBox">
                 <input type="text" placeholder="Nombre de Usuario" required/>
-                <User />
+                {/* <User /> */}
             </div>
             <div className="inputBox">
                 <input type="password" placeholder="Contraseña" required/>
-                <Pass />
+                {/* <Pass /> */}
             </div>
 
             <div className="remember-forgot">
