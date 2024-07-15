@@ -5,6 +5,7 @@ import "../index.css";
 import Input from "../components/Inputs";
 import Nbar from "../components/Nbar";
 import Card from "../components/Cards";
+import Footer from "../components/Footer";
 
 export const App = () => {
   return (
@@ -19,6 +20,7 @@ export const App = () => {
         </div>  */}
         
           <Nbar /> 
+          <Footer />
         
         {/* <Card src="https://placehold.co/600x400" description="Lorem ipsum to the doloire" title="Aigre Tuke Sote"/> */}
 
