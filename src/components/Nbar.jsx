@@ -1,14 +1,20 @@
 import React from "react";
 import Button from "../components/Button";
 import Img from "../img/ClimaPolar.jpg";
+import { Link, redirect } from "react-router-dom";
 
-const TextLine = ({ children }) => {
+/* 
+  * SOLUCIONAR PROBLEMAS DE ACCESIBILIDAD Y USABILIDAD. POR E.J:
+  * CORREGIR PROBLEMAS DE ESPACIOS Y USOS INNECESARIOS DE TEXTOS
+*/
+
+const TextLine = ({ children = [], redirectTo}) => {
   return (
     <>
       <li>
-        <a className="hover:text-gray-600 hover:underline" href="#">
+        <Link className="hover:text-gray-600 hover:underline" to={import.meta.env.VITE_APP_URL + redirectTo}>
           {children}
-        </a>
+        </Link>
       </li>
     </>
   );
@@ -17,22 +23,23 @@ const TextLine = ({ children }) => {
 const Nbar = () => {
   return (
     <>
-      <header className="bg-sky-300 h-screen">
-        <div className="w-full shadow-md shadow-slate-500">
+      <header>
+        <div className="w-full shadow sticky top-0 shadow-slate-500">
           <nav className="flex flex-wrap justify-between mx-auto p-4 bg-white">
             <div className="flex items-center mx-4">
               <img src={Img} alt="Logo" className="w-28 rounded-md" />
-              <p className="mx-4 text-3xl font-semibold">Clima Polar</p>
+              <Link className="mx-4 text-2xl font-semibold">Clima polar</Link>
             </div>
             <div className="flex items-center my-auto w-full justify-center md:w-auto">
               <ul className="flex flex-col md:flex-row items-center gap-4 md:gap-12 text-lg font-semibold">
-                <TextLine children="Home" />
-                <TextLine children="About" />
-                <TextLine children="Services" />
+                <TextLine redirectTo={"/productos"}>Productos</TextLine>
+                <TextLine redirectTo={"/servicios"}>Servicios</TextLine>
               </ul>
             </div>
             <div className="flex items-center my-auto mx-4 w-full justify-center md:w-auto md:mx-16">
-              <Button variant="primary">Iniciar sesión</Button>
+              <Button variant="primary">
+                <Link to={"/login"} >Iniciar sesi&oacute;n</Link>
+              </Button>
             </div>
           </nav>
         </div>
