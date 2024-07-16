@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../components/Button";
 import Img from "../img/ClimaPolar.jpg";
+import MenuIcon from "../components/icons/MenuIcon";
 
 const TextLine = ({ children }) => {
   return (
@@ -20,7 +21,8 @@ const Nbar = () => {
       <header className="bg-sky-300 h-screen">
         <div className="w-full shadow-md shadow-slate-500">
           <nav className="flex flex-wrap justify-between mx-auto p-4 bg-white">
-            <div className="flex items-center mx-4">
+            <div className="flex items-center mx-1">
+              <MenuIcon/>
               <img src={Img} alt="Logo" className="w-28 rounded-md" />
               <p className="mx-4 text-3xl font-semibold">Clima Polar</p>
             </div>
