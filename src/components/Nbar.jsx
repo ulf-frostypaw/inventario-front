@@ -1,11 +1,7 @@
 import React from "react";
 import Button from "../components/Button";
 import Img from "../img/ClimaPolar.jpg";
-<<<<<<< HEAD
 import { Link, redirect } from "react-router-dom";
-=======
-import MenuIcon from "../components/icons/MenuIcon";
->>>>>>> 2ddd93bdaf23a1795840e9b11f70aed26a65d381
 
 /* 
   * SOLUCIONAR PROBLEMAS DE ACCESIBILIDAD Y USABILIDAD. POR E.J:
@@ -27,17 +23,10 @@ const TextLine = ({ children = [], redirectTo}) => {
 const Nbar = () => {
   return (
     <>
-<<<<<<< HEAD
-      <header>
-        <div className="w-full shadow sticky top-0 shadow-slate-500">
-          <nav className="flex flex-wrap justify-between mx-auto p-4 bg-white container">
-            <div className="flex items-center mx-4">
-=======
       <header className="sticky top-0 z-50">
         <div className="w-full shadow-md shadow-slate-500">
           <nav className="flex flex-wrap justify-between mx-auto p-4 bg-white">
             <div className="flex items-center mx-">
->>>>>>> 2ddd93bdaf23a1795840e9b11f70aed26a65d381
               <img src={Img} alt="Logo" className="w-28 rounded-md" />
               <Link className="mx-4 text-2xl font-semibold">Clima polar</Link>
             </div>
