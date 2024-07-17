@@ -6,16 +6,8 @@ import Login from './pages/Forms/Login'
 import Articles from './pages/Articles'
 import Start from './pages/Start'
 import Product from './pages/Product'
-<<<<<<< HEAD
-import SideBar from './components/SideBar/SideBar'
-=======
 import SideBar from './components/SideBar'
-<<<<<<< HEAD
->>>>>>> 2ddd93bdaf23a1795840e9b11f70aed26a65d381
->>>>>>> 6f96c778114896c4991e83ad56a71a48069d5cc1
-=======
 import NotFound from './pages/Error/NotFound'
->>>>>>> bca66f83310f93f148ddf1ca1644eb435756557a
 
 function App() {
   return (
