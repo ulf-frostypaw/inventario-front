@@ -25,7 +25,7 @@ const Nbar = () => {
     <>
       <header>
         <div className="w-full shadow sticky top-0 shadow-slate-500">
-          <nav className="flex flex-wrap justify-between mx-auto p-4 bg-white">
+          <nav className="flex flex-wrap justify-between mx-auto p-4 bg-white container">
             <div className="flex items-center mx-4">
               <img src={Img} alt="Logo" className="w-28 rounded-md" />
               <Link className="mx-4 text-2xl font-semibold">Clima polar</Link>
