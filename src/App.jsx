@@ -6,7 +6,7 @@ import Login from './pages/Forms/Login'
 import Articles from './pages/Articles'
 import Start from './pages/Start'
 import Product from './pages/Product'
-import SideBar from './components/SideBar'
+import SideBar from './components/SideBar/SideBar'
 import NotFound from './pages/Error/NotFound'
 
 function App() {
