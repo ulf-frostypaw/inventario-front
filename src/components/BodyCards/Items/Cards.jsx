@@ -1,10 +1,10 @@
 import React from "react";
-import Button from "../components/Button";
+import Button from "../../Button";
 
 const cards = ({src, title, description}) => {
   return (
     <>
-      <div className="bg-white p-4 shadow-lg shadow-gray-400 rounded-lg w-[16rem]">
+      <div className="basis-1/5 bg-white p-4 shadow-lg shadow-gray-400 rounded-lg w-[16rem]">
         <img
           src={src}
           alt=""
