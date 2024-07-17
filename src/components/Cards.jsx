@@ -24,4 +24,4 @@ const cards = ({src, title, description}) => {
   );
 };
 
-export default cards;
+export default cards
