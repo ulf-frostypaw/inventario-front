@@ -1,6 +1,6 @@
-
 import React, { useState } from "react";
 import "../../styles/Login.css";
+import { Link } from "react-router-dom";
 /* import User from "../../icons/User";
 import Pass from "../../icons/Pass"; */
 
@@ -17,28 +17,32 @@ export default function Login() {
 
   return (
     <div className="login">
-        <form action="">
-            <h1>Login</h1>
-            <div className="inputBox">
-                <input type="text" placeholder="Nombre de Usuario" required/>
-                {/* <User /> */}
-            </div>
-            <div className="inputBox">
-                <input type="password" placeholder="Contraseña" required/>
-                {/* <Pass /> */}
-            </div>
+      <form action="">
+        <h1>Hola, de nuevo.</h1>
+        <div className="inputBox">
+          <input type="text" placeholder="Nombre de Usuario" required />
+          {/* <User /> */}
+        </div>
+        <div className="inputBox">
+          <input type="password" placeholder="Contraseña" required />
+          {/* <Pass /> */}
+        </div>
 
-            <div className="remember-forgot">
-                <label><input type="checkbox"/> Recordarme</label>
-                <a href="#">Olvide mi Contraseña</a>
-            </div>
 
-            <button type="submit" className="btn">Iniciar sesion</button>
+        <button type="submit" className="btn">
+          Iniciar sesion
+        </button>
 
-            <div className="createAccount">
-                <p>No tiene cuenta?</p><a href="#">Crear Cuenta</a>
-            </div>
-        </form>
+        <div className="createAccount">
+          <p>
+            <Link to={"/"}>¿Olvido su Contraseña?</Link>
+            
+          </p>
+          <p>
+            <Link to="#">¿Aún no tiene una cuenta?</Link>
+          </p>
+        </div>
+      </form>
     </div>
   );
 }
