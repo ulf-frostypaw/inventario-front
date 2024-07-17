@@ -1,17 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Button from "../components/Button";
 import "../index.css";
-import Input from "../components/Inputs";
+import Visualizacion from "../components/Visualizacion";
 import Nbar from "../components/Nbar";
-import Card from "../components/Cards";
 import Footer from "../components/Footer";
+
 
 export const App = () => {
   return (
     <>
-      <Nbar />
-      <Footer />
+      <div className="flex flex-col min-h-screen">
+        <main className="flex-grow">
+        <Nbar />
+        <Visualizacion />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 };

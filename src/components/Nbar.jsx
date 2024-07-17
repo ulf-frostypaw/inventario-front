@@ -18,11 +18,10 @@ const TextLine = ({ children }) => {
 const Nbar = () => {
   return (
     <>
-      <header className="bg-sky-300 h-screen">
+      <header className="sticky top-0 z-50">
         <div className="w-full shadow-md shadow-slate-500">
           <nav className="flex flex-wrap justify-between mx-auto p-4 bg-white">
-            <div className="flex items-center mx-1">
-              <MenuIcon/>
+            <div className="flex items-center mx-">
               <img src={Img} alt="Logo" className="w-28 rounded-md" />
               <p className="mx-4 text-3xl font-semibold">Clima Polar</p>
             </div>
