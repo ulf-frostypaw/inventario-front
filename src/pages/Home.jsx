@@ -1,7 +1,9 @@
 import React from "react";
 import Layout from "../components/Layout";
-import Card from "../components/Card";
+import Card from "../components/Product/Card";
 import Button from "../components/Button";
+import Heading from "../components/SectionHeader/Heading";
+import BestDeals from "../components/SectionHeader/BestDeals";
 function Home() {
   const [productos, setProductos] = React.useState([]);
   const [error, setError] = React.useState(null);
@@ -19,17 +21,19 @@ function Home() {
 
   return (
     <Layout title={"Inicio"}>
-      <div className="mx-auto container flex flex-wrap">
-        <Button variant="default">Botón</Button>
-        {productos.map((producto, index) => (
-          <div key={index} className=" px-4 mb-8">
-            <Card
-              imagenProducto={producto.image}
-              nombreProducto={producto.title}
-              precioProducto={producto.price}
-            />
-          </div>
-        ))}
+      <div className="container mx-auto my-12">
+      <BestDeals />
+        <Heading isCenter isMain desc="Seleccionamos estos productos para esta temporada de calor veraniego.">
+          Recomendados
+        </Heading>
+        <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
       </div>
     </Layout>
   );
