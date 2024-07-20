@@ -1,6 +1,6 @@
 import React from "react";
-import Input from "../Inputs";
-import Button from "../Button";
+import Input from "../../components/Inputs";
+import Button from "../../components/Button";
 
 const FormCliente = () => {
     return (

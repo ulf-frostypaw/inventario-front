@@ -1,9 +1,9 @@
-import FormCliente from "../components/Forms/FormUsuarios"
+import Registrar from "../pages/Forms/RegistrarCliente"
 
 const Start = () => {
     return (
       <div>
-        <FormCliente />
+        <Registrar />
       </div>
     )
 }
