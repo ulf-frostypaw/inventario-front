@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../../styles/Login.css";
 import { Link } from "react-router-dom";
-import Button from "../../components/Button";
+import Button from "../../components/Button"
+import { AuthContext } from "../../components/Auth/AuthContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -9,9 +10,28 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log(email, password);
-    alert("Formulario enviado");
+    /* const {email, setEmail} = useContext(AuthContext);
+    const {password, setPassword} = useContext(AuthContext); */
+    fetch('http://localhost:8080/api/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    })
+      .then((data) => {
+        console.log(data);
+        if (data.error) {
+          alert(data.error);
+        } else {
+          localStorage.setItem('token', data.token);
+          alert('Login successful');
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        // Handle the error here
+      });
   };
 
   return (

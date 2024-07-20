@@ -8,12 +8,12 @@ import Bell from "./icons/Bell";
 const TextLine = ({ children = [], redirectTo }) => {
   return (
     <>
-       <Link
-          className="hover:text-gray-600 hover:underline py-2 px-3 font-medium items-center inline-flex"
-          to={import.meta.env.VITE_APP_URL + redirectTo}
-        >
-          {children}
-        </Link>
+      <Link
+        className="hover:text-gray-600 hover:underline py-2 px-3 font-medium items-center inline-flex"
+        to={import.meta.env.VITE_APP_URL + redirectTo}
+      >
+        {children}
+      </Link>
     </>
   );
 };
@@ -22,14 +22,14 @@ const Nbar = () => {
   return (
     <>
       {/* <!-- component --> */}
-      <header class="bg-zinc-100 sticky top-0 z-10 shadow">
-        <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-teal-700 lg:px-8">
-          <div class="relative flex h-16 justify-between">
-            <div class="relative z-10 flex px-2 lg:px-0">
-              <div class="flex flex-shrink-0 items-center">
+      <header className="bg-zinc-100 sticky top-0 z-10 shadow">
+        <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-teal-700 lg:px-8">
+          <div className="relative flex h-16 justify-between">
+            <div className="relative z-10 flex px-2 lg:px-0">
+              <div className="flex flex-shrink-0 items-center">
                 <Link to={import.meta.env.VITE_APP_URL + "/"}>
                   <img
-                    class="block h-8 w-auto"
+                    className="block h-8 w-auto"
                     src="http://placehold.co/300"
                     alt="Workflow"
                   />
@@ -55,32 +55,32 @@ const Nbar = () => {
                 </div>
               </div>
             </div>
-            <div class="relative z-10 flex items-center lg:hidden">
+            <div className="relative z-10 flex items-center lg:hidden">
               {/* <!-- Mobile menu button --> */}
               <button
                 type="button"
-                class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
               >
-                <span class="absolute -inset-0.5"></span>
-                <span class="sr-only">Open menu</span>
+                <span className="absolute -inset-0.5"></span>
+                <span className="sr-only">Open menu</span>
                 {/* <!--
             Icon when menu is closed.
 
             Menu open: "hidden", Menu closed: "block"
           --> */}
                 <svg
-                  class="block h-6 w-6"
+                  className="block h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="currentColor"
                   aria-hidden="true"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                   />
                 </svg>
@@ -90,46 +90,46 @@ const Nbar = () => {
             Menu open: "block", Menu closed: "hidden"
           --> */}
                 <svg
-                  class="hidden h-6 w-6"
+                  className="hidden h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="currentColor"
                   aria-hidden="true"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
               </button>
             </div>
-            <div class="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center">
+            <div className="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center">
               <button
                 type="button"
-                class="relative flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                className="relative flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
               >
-                <span class="absolute -inset-1.5"></span>
-                <span class="sr-only">View notifications</span>
+                <span className="absolute -inset-1.5"></span>
+                <span className="sr-only">View notifications</span>
                 <Bell />
               </button>
 
               {/*  <!-- Profile dropdown --> */}
-              <div class="relative ml-4 flex-shrink-0">
+              <div className="relative ml-4 flex-shrink-0">
                 <div>
                   <button
                     type="button"
-                    class="relative flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    className="relative flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                     id="user-menu-button"
                     aria-expanded="false"
                     aria-haspopup="true"
                   >
-                    <span class="absolute -inset-1.5"></span>
-                    <span class="sr-only">Open user menu</span>
+                    <span className="absolute -inset-1.5"></span>
+                    <span className="sr-only">Open user menu</span>
                     {localStorage.getItem("email") ? (
                       <img
-                        class="w-12 aspect-square rounded-full"
+                        className="w-12 aspect-square rounded-full"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                         alt=""
                       />
@@ -160,7 +160,7 @@ const Nbar = () => {
               </div>
             </div>
           </div>
-          <nav class="hidden lg:flex lg:space-x-8 lg:py-2" aria-label="Global">
+          <nav className="hidden lg:flex lg:space-x-8 lg:py-2" aria-label="Global">
             {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
             <TextLine redirectTo={"/productos"}>Productos</TextLine>
             <TextLine redirectTo={"/servicios"}>Servicios</TextLine>
