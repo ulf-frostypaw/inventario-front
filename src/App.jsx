@@ -9,7 +9,7 @@ import Product from "./pages/Product";
 import SideBar from "./components/SideBar/SideBar";
 import NotFound from "./pages/Error/NotFound";
 import { AuthContext } from "./components/Auth/AuthContext";
-import Dashboard from "./pages/Dashboard";
+import Sidebar from "./pages/Dashboard";
 
 function App() 
 {
@@ -25,7 +25,7 @@ function App()
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Sidebar />} />
       </Routes>
     </AuthContext.Provider>
     </BrowserRouter>
