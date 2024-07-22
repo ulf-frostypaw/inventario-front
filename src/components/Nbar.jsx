@@ -6,12 +6,14 @@ import Search from "./icons/Search";
 import Bell from "./icons/Bell";
 
 const TextLine = ({ children = [], redirectTo }) => {
+  ///console.log(userData);
+  
   return (
     <>
       <Link
         className="hover:text-gray-600 hover:underline py-2 px-3 font-medium items-center inline-flex"
         to={import.meta.env.VITE_APP_URL + redirectTo}
-      >
+        >
         {children}
       </Link>
     </>
@@ -19,6 +21,8 @@ const TextLine = ({ children = [], redirectTo }) => {
 };
 
 const Nbar = () => {
+  const usuario = localStorage.getItem("userData");
+  const userData = usuario ? JSON.parse(usuario).data.correo_usuario : false;
   return (
     <>
       {/* <!-- component --> */}
@@ -127,7 +131,7 @@ const Nbar = () => {
                   >
                     <span className="absolute -inset-1.5"></span>
                     <span className="sr-only">Open user menu</span>
-                    {localStorage.getItem("email") ? (
+                    {userData ? (
                       <img
                         className="w-12 aspect-square rounded-full"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"

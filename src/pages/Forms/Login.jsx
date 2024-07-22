@@ -7,31 +7,31 @@ import { AuthContext } from "../../components/Auth/AuthContext";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  ///const {userData, setUserData} = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /* const {email, setEmail} = useContext(AuthContext);
-    const {password, setPassword} = useContext(AuthContext); */
-    fetch('http://localhost:8080/api/users/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    })
-      .then((data) => {
-        console.log(data);
-        if (data.error) {
-          alert(data.error);
-        } else {
-          localStorage.setItem('token', data.token);
-          alert('Login successful');
-        }
+    const modifiedData = {
+      email: email,
+      password: password,
+    }
+    console.log(modifiedData)
+    try {
+      fetch('http://localhost:8080/public/index.php?url=login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(modifiedData),
       })
-      .catch((error) => {
-        console.error(error);
-        // Handle the error here
-      });
+        .then((response) => response.json())
+        .then((data) => {
+          localStorage.setItem("userData", JSON.stringify(data));
+        window.location.href = "/";
+        });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
