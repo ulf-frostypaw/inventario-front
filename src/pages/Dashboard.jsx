@@ -1,22 +1,70 @@
-const Dashboard = () => {
+// Sidebar.js
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTable,
+  faEdit,
+  faColumns,
+  faDesktop,
+  faPalette,
+  faUser,
+  faLock,
+  faExclamationTriangle,
+  faBars,
+  faSignOutAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faVuejs } from "@fortawesome/free-brands-svg-icons";
+
+const Sidebar = () => {
   return (
-    <>
-      <div className="fixed h-screen w-[16%] bg-black p-4">
-        <div className="bg-slate-800 flex m-auto rounded-lg top-0 my-[2%] h-[100%] w-[90%] ">
-          <div className="bg-slate-800 h-100% p-4 rounded-md text-white justify-center">
-            <p className="text-lg flex justify-center">Dashboard</p>
-            <div className="flex justify-center">
-              <ul>
-                <li>
-                  <a href="#">Clientes</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+    <div className="p-3 h-screen">
+      <div className=" w-64 bg-slate-800 fixed rounded-lg h-[100%] text-white flex flex-col">
+        <div className="text-center text-2xl font-bold py-4">
+          One
+        </div>
+        <nav className="flex-1">
+          <ul>
+            <li className="flex items-center p-4 hover:bg-gray-700">
+              <FontAwesomeIcon icon={faColumns} className="mr-3" />
+              Dashboard
+            </li>
+            <li className="flex items-center p-4 hover:bg-gray-700">
+              <FontAwesomeIcon icon={faTable} className="mr-3" />
+              Tables
+            </li>
+            <li className="flex items-center p-4 hover:bg-gray-700">
+              <FontAwesomeIcon icon={faEdit} className="mr-3" />
+              Forms
+            </li>
+            <li className="flex items-center p-4 hover:bg-gray-700">
+              <FontAwesomeIcon icon={faPalette} className="mr-3" />
+              Styles
+            </li>
+            <li className="flex items-center p-4 hover:bg-gray-700">
+              <FontAwesomeIcon icon={faUser} className="mr-3" />
+              Profile
+            </li>
+            <li className="flex items-center p-4 hover:bg-gray-700">
+              <FontAwesomeIcon icon={faLock} className="mr-3" />
+              Login
+            </li>
+            <li className="flex items-center p-4 hover:bg-gray-700">
+              <FontAwesomeIcon icon={faGithub} className="mr-3" />
+              GitHub
+            </li>
+            <li className="flex items-center p-4 hover:bg-gray-700">
+              <FontAwesomeIcon icon={faVuejs} className="mr-3" />
+              Vue version
+            </li>
+          </ul>
+        </nav>
+        <div className="p-4 hover:bg-blue-700 bg-blue-600 flex items-center justify-center cursor-pointer">
+          <FontAwesomeIcon icon={faSignOutAlt} className="mr-3" />
+          Logout
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default Dashboard;
+export default Sidebar;
