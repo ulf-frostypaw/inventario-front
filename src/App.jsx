@@ -9,25 +9,27 @@ import Product from "./pages/Product";
 import SideBar from "./components/SideBar/SideBar";
 import NotFound from "./pages/Error/NotFound";
 import { AuthContext } from "./components/Auth/AuthContext";
+import Dashboard from "./pages/Dashboard";
 
 function App() 
 {
   const [email, setEmail] = "Keso";
   return (
-    <AuthContext.Provider value={[email, setEmail]}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/sidebar" element={<SideBar />} />
-          <Route path="/product/:id" element={<Product />} />
-          <Route path="/start" element={<Start />} />
-          <Route path="/articles" element={<Articles />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+    <BrowserRouter>
+    <AuthContext.Provider value={{ email, setEmail }}>
+      <Routes>
+        <Route path="/sidebar" element={<SideBar />} />
+        <Route path="/product/:id" element={<Product />} />
+        <Route path="/register" element={<Start />} />
+        <Route path="/articles" element={<Articles />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
     </AuthContext.Provider>
-  );
+    </BrowserRouter>
+  )
 }
 
 export default App;
