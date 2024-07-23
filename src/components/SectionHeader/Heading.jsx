@@ -11,7 +11,7 @@ function Heading({
 }) {
   return (
     <div
-      className={`nc-Section-Heading relative flex flex-col justify-between sm:flex-row sm:items-end ${className}`}
+      className={`relative flex flex-col justify-between sm:flex-row sm:items-end ${className}`}
     >
       <div
         className={
