@@ -9,7 +9,7 @@ import Product from "./pages/Product";
 import SideBar from "./components/SideBar/SideBar";
 import NotFound from "./pages/Error/NotFound";
 import { AuthContext } from "./components/Auth/AuthContext";
-import Dashboard from "./components/SideBarDasboard";
+import Dashboard from "./pages/Dashboard";
 import LeerUsuarios from "./pages/Usuarios";
 
 function App() 
@@ -23,11 +23,11 @@ function App()
         <Route path="/sidebar" element={<SideBar />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/register" element={<Start />} />
-        <Route path="/articles" element={<Articles />} />
+        <Route  path="/articles" element={<Articles />} />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/dashboard" element={<Dashboard children="Dashboard"/>} />
+        <Route path="/dashboard" element={<Dashboard/>} />
       </Routes>
     </AuthContext.Provider>
     </BrowserRouter>

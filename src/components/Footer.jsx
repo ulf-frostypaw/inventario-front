@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const Footer = () => {
     return (
@@ -7,7 +7,7 @@ const Footer = () => {
                 <p className="text-lg font-semibold">Clima Polar 2024 - Todos los derechos reservados ©</p>
             </div>
         </footer>
-    );
+    )
 }
 
 export default Footer;
