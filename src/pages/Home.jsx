@@ -26,7 +26,7 @@ function Home() {
     <Layout title={"Inicio"}>
       <div className="container mx-auto my-12">
       <BestDeals />
-        <Heading isCenter isMain desc="Seleccionamos estos productos para esta temporada de calor veraniego.">
+        <Heading className="p-4" isCenter isMain desc="Seleccionamos estos productos para esta temporada de calor veraniego.">
           Recomendados
         </Heading>
         <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
