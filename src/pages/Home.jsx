@@ -1,41 +1,27 @@
 import React, { useContext } from "react";
 import Layout from "../components/Layout";
 import Card from "../components/Product/Card";
-import Button from "../components/Button";
 import Heading from "../components/SectionHeader/Heading";
-import BestDeals from "../components/SectionHeader/BestDeals";
-import { AuthContext } from "../components/Auth/AuthContext";
+//import { AuthContext } from "../components/Auth/AuthContext";
 function Home() {
   const [productos, setProductos] = React.useState([]);
-  const [error, setError] = React.useState(null);
-  const {email, setEmail} = useContext(AuthContext);
-  console.log("Email: " + email);
 
   React.useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch(import.meta.env.VITE_API_URL + "/listProducts")
       .then((response) => response.json())
-      .then((data) => {
-        setProductos(data);
-      })
-      .catch((error) => {
-        setError(error);
-      });
+      .then((data) => setProductos(data))
   }, []);
 
   return (
     <Layout title={"Inicio"}>
       <div className="container mx-auto my-12">
-      <BestDeals />
-        <Heading className="p-4" isCenter isMain desc="Seleccionamos estos productos para esta temporada de calor veraniego.">
+        <Heading className="p-4" isCenter isMain desc="Elija el mejor clima de todos y téngalo al alcance de sus manos de forma practica y sencilla.">
           Recomendados
         </Heading>
         <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {productos.map((producto) => (
+            <Card key={producto.id} productName={producto.nombre_producto} productDescription={producto.descripcion} priceSale={producto.precio_venta} />
+          ))}
         </div>
       </div>
     </Layout>

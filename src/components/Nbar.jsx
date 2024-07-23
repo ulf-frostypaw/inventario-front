@@ -52,9 +52,10 @@ const Nbar = () => {
                     <Search />
                   </div>
                   <input
+                  autoComplete="off"
                     id="search"
                     name="search"
-                    className="block w-full rounded-3xl py-2 outline-none pl-10 pr-3 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-sm py-2 outline-none pl-10 pr-3 sm:text-sm sm:leading-6"
                     placeholder="Buscar entre productos y servicios"
                     type="search"
                   />
@@ -168,9 +169,9 @@ const Nbar = () => {
           </div>
           <nav className="hidden lg:flex lg:space-x-8 lg:py-2" aria-label="Global">
             {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-            <TextLine redirectTo={"/productos"}>Productos</TextLine>
-            <TextLine redirectTo={"/servicios"}>Servicios</TextLine>
-            <TextLine redirectTo={"/dashboard"}>Dashboard</TextLine>
+            <TextLine redirectTo={"/articles"}>Nuestros productos</TextLine>
+            <TextLine redirectTo={"/request-service"}>Solicitar un servicio</TextLine>
+            <TextLine redirectTo={"/dashboard"}>Panel de control</TextLine>
           </nav>
         </div>
       </header>

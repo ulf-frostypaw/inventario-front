@@ -10,7 +10,7 @@ import SideBar from "./components/SideBar/SideBar";
 import NotFound from "./pages/Error/NotFound";
 import { AuthContext } from "./components/Auth/AuthContext";
 import Dashboard from "./pages/Dashboard";
-import LeerUsuarios from "./pages/Usuarios";
+import List from "./pages/Products/List";
 
 function App() 
 {
@@ -23,7 +23,7 @@ function App()
         <Route path="/sidebar" element={<SideBar />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/register" element={<Start />} />
-        <Route  path="/articles" element={<Articles />} />
+        <Route path="/articles" element={<List />} />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />

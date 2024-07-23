@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LikeButton from "./LikeButton";
-function Card() {
+function Card({productName = '', productDescription = '', priceSale}) {
   return (
     <div
       className={`transitionEffect relative rounded-2xl p-3 shadow-md bg-white`}
@@ -20,14 +20,12 @@ function Card() {
       </div>
       <div className="mt-3">
         <div className="flex items-center justify-between">
-          <h3 className="font-semibold">Producto</h3>
+          <h3 className="font-semibold">{productName}</h3>
         </div>
 
         <div className="flex items-center justify-between">
-          <p className="text-sm text-neutral-500">Servicio</p>
-          <p className="text-lg font-medium text-primary">
-            $1000
-          </p>
+          <p className="text-sm text-neutral-500">{productDescription.length > 40 ? productDescription.substring(0, 40) + '...' : productDescription}</p>
+          <p className="text-lg font-medium text-primary">${priceSale}</p>
         </div>
       </div>
     </div>
