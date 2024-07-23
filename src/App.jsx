@@ -19,6 +19,7 @@ function App()
     <BrowserRouter>
     <AuthContext.Provider value={{ email, setEmail }}>
       <Routes>
+        <Route path="/usuarios" element={<LeerUsuarios />} />
         <Route path="/sidebar" element={<SideBar />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/register" element={<Start />} />
@@ -26,7 +27,7 @@ function App()
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard children="Dashboard"/>} />
       </Routes>
     </AuthContext.Provider>
     </BrowserRouter>

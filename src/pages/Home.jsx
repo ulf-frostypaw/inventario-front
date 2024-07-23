@@ -15,7 +15,7 @@ function Home() {
   return (
     <Layout title={"Inicio"}>
       <div className="container mx-auto my-12">
-        <Heading isCenter isMain desc="Elija el mejor clima de todos y téngalo al alcance de sus manos de forma practica y sencilla.">
+        <Heading className="p-4" isCenter isMain desc="Elija el mejor clima de todos y téngalo al alcance de sus manos de forma practica y sencilla.">
           Recomendados
         </Heading>
         <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
