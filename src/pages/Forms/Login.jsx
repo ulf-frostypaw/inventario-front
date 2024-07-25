@@ -1,37 +1,36 @@
 import React, { useContext, useState } from "react";
 import "../../styles/Login.css";
 import { Link } from "react-router-dom";
-import Button from "../../components/Button"
-import { AuthContext } from "../../components/Auth/AuthContext";
+import Button from "../../components/Button";
+import { AuthContext } from "../../components/Auth/AuthContext"; // Asegúrate de que la ruta sea correcta
+import AlertCard from "../../components/Alerts/AlertCard";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  ///const {userData, setUserData} = useContext(AuthContext);
+  const [data, setData] = useState({});
+  const authContext = useContext(AuthContext);
+
+  const { login } = authContext;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const modifiedData = {
-      email: email,
-      password: password,
-    }
-    console.log(modifiedData)
-    try {
-      fetch('http://localhost:8080/public/index.php?url=login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(modifiedData),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          localStorage.setItem("userData", JSON.stringify(data));
-        window.location.href = "/";
-        });
-    } catch (error) {
-      console.log(error);
-    }
+    fetch(`${import.meta.env.VITE_API_URL}/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    })
+      .then((res) => res.json())
+      .then((responseData) => {
+        setData(responseData);
+        if (responseData.status === 200) {
+          const userData = responseData.data; // Simulación de datos de usuario
+          login(userData); // Llama a la función login
+          window.location.href = "/"; // Redirige a la página principal
+        }
+      });
   };
 
   return (
@@ -40,7 +39,8 @@ export default function Login() {
         <h1 className="text-2xl font-bold text-center mb-4 dark:text-gray-200">
           Welcome Back!
         </h1>
-        <form action="" onSubmit={handleSubmit}>
+        {data.status === 400 && <AlertCard message={data.message} />}
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -76,7 +76,6 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-           
             <div className="flex pt-4 justify-between">
               <Link
                 to="#"

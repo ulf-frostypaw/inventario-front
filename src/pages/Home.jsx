@@ -19,8 +19,8 @@ function Home() {
           Recomendados
         </Heading>
         <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
-          {productos.map((producto) => (
-            <Card key={producto.id} productName={producto.nombre_producto} productDescription={producto.descripcion} priceSale={producto.precio_venta} />
+          {productos.map((producto, index) => (
+            <Card key={index} productName={producto.nombre_producto} productDescription={producto.descripcion} priceSale={producto.precio_venta} link={producto.id_producto} />
           ))}
         </div>
       </div>

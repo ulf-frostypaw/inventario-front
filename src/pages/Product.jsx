@@ -8,22 +8,56 @@ import Button from "../components/Button";
 import { useParams } from "react-router-dom";
 
 export const App = () => {
+  
   const { id } = useParams();
-  const [selectedImage, setSelectedImage] = useState("http://placehold.co/900");
-
+  const [responseDataProduct, setResponseDataProduct] = useState({});
+  fetch(import.meta.env.VITE_API_URL + '/listProducts/' + id, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((responseDataProduct) => {
+      setResponseDataProduct(responseDataProduct);
+    });
+    
+    function handleSubmit(event) {
+      event.preventDefault();
+      const formData = {
+        id_producto: responseDataProduct[0]?.id_producto,
+        id_cliente: 1, // esto lo leera desde localstorage para saber cual es el estado actual del cliente
+      };
+      fetch(import.meta.env.VITE_API_URL + "/apartarProducto", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.json())
+        .then((responseData) => {
+          if(responseData.status == 200){
+            alert(responseData.message);
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }
+    const [selectedImage, setSelectedImage] = useState("https://refrimartmexico.com/uploads/productos/50-minisplit-inverter-daikin-15-ton-220v.png");
   const handleImageClick = (imageUrl) => {
     setSelectedImage(imageUrl);
   };
   return (
     <Layout title={"Product"}>
-      <section class="py-12 sm:py-16">
-        <div class="container mx-auto px-4">
-
-          <div class="lg:col-gap-12 xl:col-gap-16 mt-8 grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
-            <div class="lg:col-span-3 lg:row-end-1">
-              <div class="lg:flex lg:items-start">
-                <div class="lg:order-2 lg:ml-5">
-                  <div class="max-w-xl overflow-hidden rounded-lg">
+      <section className="py-12 sm:py-16">
+        <div className="container mx-auto px-4">
+          <div className="lg:col-gap-12 xl:col-gap-16 mt-8 grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
+            <div className="lg:col-span-3 lg:row-end-1">
+              <div className="lg:flex lg:items-start">
+                <div className="lg:order-2 lg:ml-5">
+                  <div className="max-w-xl overflow-hidden rounded-lg">
                     <img
                       className="h-full w-full max-w-full aspect-square object-cover"
                       src={selectedImage}
@@ -32,45 +66,45 @@ export const App = () => {
                   </div>
                 </div>
 
-                <div class="mt-2 w-full lg:order-1 lg:w-32 lg:flex-shrink-0">
-                  <div class="flex flex-row items-start lg:flex-col">
+                <div className="mt-2 w-full lg:order-1 lg:w-32 lg:flex-shrink-0">
+                  <div className="flex flex-row items-start lg:flex-col">
                     <button
                       type="button"
-                      class={`flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 ${
-                        selectedImage === "http://placehold.co/500"
+                      className={`flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 ${
+                        selectedImage === "https://refrimartmexico.com/uploads/productos/50-minisplit-inverter-daikin-15-ton-220v.png"
                           ? "border-gray-900"
                           : "border-transparent"
                       } text-center`}
                       onClick={() =>
-                        handleImageClick("http://placehold.co/500")
+                        handleImageClick("https://refrimartmexico.com/uploads/productos/50-minisplit-inverter-daikin-15-ton-220v.png")
                       }
                     >
                       <img
-                        class="h-full w-full object-cover"
-                        src="http://placehold.co/500"
+                        className="h-full w-full object-cover"
+                        src="https://refrimartmexico.com/uploads/productos/50-minisplit-inverter-daikin-15-ton-220v.png"
                         alt=""
                       />
                     </button>
                     <button
                       type="button"
-                      class={`flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 ${
-                        selectedImage === "http://placehold.co/800"
+                      className={`flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 ${
+                        selectedImage === "https://www.electroclimalia.com/8190-large_default/aire-acondicionado-daikin-txc50b-inverter.jpg"
                           ? "border-gray-900"
                           : "border-transparent"
                       } text-center`}
                       onClick={() =>
-                        handleImageClick("http://placehold.co/800")
+                        handleImageClick("https://www.electroclimalia.com/8190-large_default/aire-acondicionado-daikin-txc50b-inverter.jpg")
                       }
                     >
                       <img
-                        class="h-full w-full object-cover"
-                        src="http://placehold.co/800"
+                        className="h-full w-full object-cover"
+                        src="https://www.electroclimalia.com/8190-large_default/aire-acondicionado-daikin-txc50b-inverter.jpg"
                         alt=""
                       />
                     </button>
                     <button
                       type="button"
-                      class={`flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 ${
+                      className={`flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 ${
                         selectedImage === "http://placehold.co/700"
                           ? "border-gray-900"
                           : "border-transparent"
@@ -80,7 +114,7 @@ export const App = () => {
                       }
                     >
                       <img
-                        class="h-full w-full object-cover"
+                        className="h-full w-full object-cover"
                         src="http://placehold.co/700"
                         alt=""
                       />
@@ -90,157 +124,65 @@ export const App = () => {
               </div>
             </div>
 
-            <div class="lg:col-span-2 lg:row-span-2 lg:row-end-2">
-              <h1 class="sm: text-2xl font-bold text-gray-900 sm:text-3xl">
-                Afro-Brazillian Coffee
+            <div className="lg:col-span-2 lg:row-span-2 lg:row-end-2">
+              <h1 className="sm: text-2xl font-bold text-gray-900 sm:text-3xl">
+                {responseDataProduct[0]?.nombre_producto}
               </h1>
 
-              <h2 class="mt-8 text-base text-gray-900">Coffee Type</h2>
-              <div class="mt-3 flex select-none flex-wrap items-center gap-1">
-                <label class="">
-                  <input
-                    type="radio"
-                    name="type"
-                    value="Powder"
-                    class="peer sr-only"
-                    checked
-                  />
-                  <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">
-                    Powder
-                  </p>
+              {/* <h2 className="mt-8 text-base text-gray-900">Toneladas</h2>
+              <div className="mt-3 flex select-none flex-wrap items-center gap-1">
+                <label className="">
+                  <input type="number" name="toneladas" min={"1"} max={"10"} placeholder="0 toneladas" id="" />
                 </label>
-                <label class="">
-                  <input
-                    type="radio"
-                    name="type"
-                    value="Whole Bean"
-                    class="peer sr-only"
-                  />
-                  <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">
-                    Whole Bean
-                  </p>
-                </label>
-                <label class="">
-                  <input
-                    type="radio"
-                    name="type"
-                    value="Groud"
-                    class="peer sr-only"
-                  />
-                  <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">
-                    Groud
-                  </p>
-                </label>
-              </div>
+              </div> */}
 
-              <h2 class="mt-8 text-base text-gray-900">Choose subscription</h2>
-              <div class="mt-3 flex select-none flex-wrap items-center gap-1">
-                <label class="">
-                  <input
-                    type="radio"
-                    name="subscription"
-                    value="4 Months"
-                    class="peer sr-only"
-                  />
-                  <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">
-                    4 Months
-                  </p>
-                  <span class="mt-1 block text-center text-xs">$80/mo</span>
-                </label>
-                <label class="">
-                  <input
-                    type="radio"
-                    name="subscription"
-                    value="8 Months"
-                    class="peer sr-only"
-                    checked
-                  />
-                  <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">
-                    8 Months
-                  </p>
-                  <span class="mt-1 block text-center text-xs">$60/mo</span>
-                </label>
-                <label class="">
-                  <input
-                    type="radio"
-                    name="subscription"
-                    value="12 Months"
-                    class="peer sr-only"
-                  />
-                  <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">
-                    12 Months
-                  </p>
-                  <span class="mt-1 block text-center text-xs">$40/mo</span>
-                </label>
-              </div>
-
-              <div class="mt-10 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
-                <div class="flex items-end">
-                  <h1 class="text-3xl font-bold">$60.50</h1>
-                  <span class="text-base">/month</span>
+              <div className="mt-10 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
+                <div className="flex items-end">
+                  <h1 className="text-3xl font-bold">${responseDataProduct[0]?.precio_costo}</h1>
+                  <span className="text-sm font-medium text-gray-600 ml-2">/ tonelada</span>
                 </div>
               </div>
 
-              <ul class="mt-8 space-y-2">
-                <li class="flex items-center text-left text-sm font-medium text-gray-600">
-                  <Button variant="primary">Apartar producto</Button>
+              <ul className="mt-8 space-y-2">
+                <li className="flex items-center text-left text-sm font-medium text-gray-600">
+                  <Button onClick={handleSubmit} variant="primary">Apartar producto</Button>
                 </li>
 
-                <li class="flex items-center text-left text-sm font-medium text-gray-600">
-                  <li class="flex items-center text-left text-sm font-medium text-gray-600 my-4">
-                    <svg
-                      class="mr-2 block h-5 w-5 align-middle text-gray-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        class=""
-                      ></path>
-                    </svg>
-                    Este producto solo se puede retirar en tienda.
-                  </li>
+                <li className="flex items-center text-left text-sm font-medium text-gray-600 mx-4">
+                  <svg
+                    className="mr-2 block h-5 w-5 align-middle text-gray-500"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      className=""
+                    ></path>
+                  </svg>
+                  Este producto solo se puede retirar en tienda.
                 </li>
               </ul>
             </div>
 
-            <div class="lg:col-span-3">
-              <div class="border-b border-gray-300">
-                <nav class="flex gap-4">
-                  <a
-                    href="#"
-                    title=""
-                    class="border-b-2 border-gray-900 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800"
+            <div className="lg:col-span-3">
+              <div className="border-b border-gray-300">
+                <nav className="flex gap-4">
+                  <span
+                    className="border-b-2 border-gray-900 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800"
                   >
-                    {" "}
-                    Description{" "}
-                  </a>
+                    Descripción
+                  </span>
                 </nav>
               </div>
 
-              <div class="mt-8 flow-root sm:mt-12">
-                <h1 class="text-3xl font-bold">Delivered To Your Door</h1>
-                <p class="mt-4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-                  accusantium nesciunt fuga.
-                </p>
-                <h1 class="mt-8 text-3xl font-bold">
-                  From the Fine Farms of Brazil
-                </h1>
-                <p class="mt-4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-                  numquam enim facere.
-                </p>
-                <p class="mt-4">
-                  Amet consectetur adipisicing elit. Optio numquam enim facere.
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Dolore rerum nostrum eius facere, ad neque.
-                </p>
+              <div className="mt-8 flow-root sm:mt-12">
+                {/* <h1 className="text-3xl font-bold">Delivered To Your Door</h1> */}
+                {responseDataProduct[0]?.descripcion}
               </div>
             </div>
           </div>
