@@ -1,9 +1,16 @@
 const Tables = () => {
   return (
     <>
-      <div className="flex-grow flex justify-center items-start p-6">
-        <div className=" bg-white p-6 rounded-lg shadow-lg">
+      <div className="flex-grow flex flex-col items-center p-6">
+        <div className="w-full flex justify-end mb-4">
+          <a href="http://localhost:5173/addUsers" className="bg-blue-500 cursor-pointer text-white px-4 py-2 rounded hover:bg-blue-600">
+            Agregar usuario
+          </a>
+        </div>
+
+        <div className="w-full bg-white p-6 rounded-lg shadow-lg">
           <h2 className="text-2xl font-bold mb-4 text-center">Usuarios</h2>
+
           <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
             <thead className="bg-gray-100">
               <tr>

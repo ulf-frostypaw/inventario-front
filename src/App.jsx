@@ -12,12 +12,14 @@ import NotFound from "./pages/Error/NotFound";
 import Dashboard from "./pages/Dashboard";
 import List from "./pages/Products/List";
 import LeerUsuarios from "./pages/Usuarios";
+import AddUsers from "./pages/AddUsers";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/addUsers" element={<AddUsers />} />
+        <Route path="/usuarios" element={<LeerUsuarios />} />
         <Route path="/sidebar" element={<SideBar />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/articles" element={<List />} />
