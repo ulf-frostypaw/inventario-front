@@ -11,6 +11,8 @@ import NotFound from "./pages/Error/NotFound";
 import { AuthContext } from "./components/Auth/AuthContext";
 import Dashboard from "./pages/Dashboard";
 import List from "./pages/Products/List";
+import LeerUsuarios from "./pages/Usuarios";
+import AddUsers from "./pages/AddUsers";
 
 function App() 
 {
@@ -19,6 +21,7 @@ function App()
     <BrowserRouter>
     <AuthContext.Provider value={{ email, setEmail }}>
       <Routes>
+        <Route path="/addUsers" element={<AddUsers />} />
         <Route path="/usuarios" element={<LeerUsuarios />} />
         <Route path="/sidebar" element={<SideBar />} />
         <Route path="/product/:id" element={<Product />} />
