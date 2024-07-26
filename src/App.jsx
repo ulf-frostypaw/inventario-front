@@ -29,18 +29,24 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product/:id" element={<Product />} />
-        <Route path="/articles" element={<List />} />
+        <Route path="/" element={<Home />} />{/*listo*/}
+        <Route path="/product/:id" element={<Product />} /> {/*listo*/}
+        <Route path="/articles" element={<List />} /> {/*listo*/}
 
         {/* User auth forms */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} /> {/*listo*/}
+        <Route path="/register" element={<Register />} /> {/*listo*/}
 
         {/* DASHBOARD ROUTES */}
-        <Route path="/dashboard" element={<Index />} />
+        <Route path="/dashboard" element={<Index />} /> {/*listo*/}
 
 
+        <Route path="/dashboard/users" element={<ListUsers />} /> {/*listo*/}
+        <Route path="/dashboard/users/addUser" element={<CreateUser />} />
+        <Route path="/dashboard/users/editUser/:id" element={<AddUsers />} />
+
+        <Route path="/dashboard/products" element={<ListProducts />} /> {/*listo*/}
+        <Route path="/dashboard/products/edit/:id" element={<EditProduct />} />
         <Route path="/dashboard/users" element={<ListUsers />} />
         <Route path="/dashboard/users/createUser" element={<CreateUser />} />
         <Route path="/dashboard/users/editUser/:id" element={<EditUser />} />
@@ -51,7 +57,7 @@ function App() {
         <Route path="/dashboard/products" element={<ListProducts />} />
 
 
-        <Route path="/dashboard/apartados" element={<ListApartados />} />
+        <Route path="/dashboard/apartados" element={<ListApartados />} />{/*listo*/}
 
 
 
