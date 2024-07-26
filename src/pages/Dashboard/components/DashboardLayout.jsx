@@ -4,7 +4,7 @@ import Sidebar from './SideBarDashboard'
 
 function DashboardLayout({ title, children }) {
   return (
-    <div className="bg-slate-700 w-full h-full flex">
+    <div className="bg-gray w-full h-full flex">
       <div className="w-1/10">
         <Sidebar/>
       </div>

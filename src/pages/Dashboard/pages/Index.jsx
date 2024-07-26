@@ -1,20 +1,22 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import DashboardLayout from "../components/DashboardLayout";
 import Tables from "../components/Tables";
 
 function Index() {
   // aqui vienen los datos estadisticos del panel de administracion
   const [responseData, setResponseData] = useState({});
-  fetch(import.meta.env.VITE_API_URL + "/countData", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((responseData) => {
-      setResponseData(responseData);
-    });
+  useEffect(() => {
+    fetch(import.meta.env.VITE_API_URL + "/countData", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((responseData) => {
+        setResponseData(responseData);
+      });
+  }, []);
     
   return (
     <DashboardLayout title="Dashboard">

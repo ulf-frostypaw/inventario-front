@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../index.css";
 import Visualizacion from "../components/Visualizacion";
 import Layout from "../components/Layout";
@@ -11,16 +11,19 @@ export const App = () => {
   
   const { id } = useParams();
   const [responseDataProduct, setResponseDataProduct] = useState({});
-  fetch(import.meta.env.VITE_API_URL + '/listProducts/' + id, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((responseDataProduct) => {
-      setResponseDataProduct(responseDataProduct);
-    });
+
+  useEffect(() => {
+    fetch(import.meta.env.VITE_API_URL + '/listProducts/' + id, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((responseDataProduct) => {
+        setResponseDataProduct(responseDataProduct);
+      });
+  }, [id]);
     
     function handleSubmit(event) {
       event.preventDefault();

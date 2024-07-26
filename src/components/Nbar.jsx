@@ -32,7 +32,7 @@ const Nbar = () => {
                 <Link to={import.meta.env.VITE_APP_URL + "/"}>
                   <img
                     className="block h-8 w-auto"
-                    src="http://placehold.co/300"
+                    src="https://i.planetamexico.com.mx/images/2017/1222/1306550-clima-polar-del-pacifico-20171222164519646.jpg"
                     alt="Workflow"
                   />
                 </Link>
