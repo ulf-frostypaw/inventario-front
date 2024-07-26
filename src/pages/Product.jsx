@@ -26,7 +26,7 @@ export const App = () => {
       event.preventDefault();
       const formData = {
         id_producto: responseDataProduct[0]?.id_producto,
-        id_cliente: 1, // esto lo leera desde localstorage para saber cual es el estado actual del cliente
+        id_cliente: localStorage.getItem("userData")?.id_usuario,
       };
       fetch(import.meta.env.VITE_API_URL + "/apartarProducto", {
         method: "POST",

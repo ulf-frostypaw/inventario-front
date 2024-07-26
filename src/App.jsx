@@ -21,6 +21,8 @@ import ListProducts from "./pages/Dashboard/pages/Products/ListProducts";
 import EditProduct from "./pages/Dashboard/pages/Products/EditProduct";
 import ListApartados from "./pages/Dashboard/pages/Apartados/ListApartados";
 import CreateUser from "./pages/Dashboard/pages/Users/CreateUser";
+import EditUser from "./pages/Dashboard/pages/Users/EditUser";
+import CreateProduct from "./pages/Dashboard/pages/Products/CreateProduct";
 
 
 function App() {
@@ -45,6 +47,13 @@ function App() {
 
         <Route path="/dashboard/products" element={<ListProducts />} /> {/*listo*/}
         <Route path="/dashboard/products/edit/:id" element={<EditProduct />} />
+        <Route path="/dashboard/users" element={<ListUsers />} />
+        <Route path="/dashboard/users/createUser" element={<CreateUser />} />
+        <Route path="/dashboard/users/editUser/:id" element={<EditUser />} />
+
+        <Route path="/dashboard/products" element={<ListProducts />} />
+        <Route path="/dashboard/products/createProduct" element={<CreateProduct />} />
+        <Route path="/dashboard/products/editProduct/:id" element={<EditProduct />} />
         <Route path="/dashboard/products" element={<ListProducts />} />
 
 
