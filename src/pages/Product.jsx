@@ -26,10 +26,14 @@ export const App = () => {
   }, [id]);
     
     function handleSubmit(event) {
+      const userData = JSON.parse(localStorage.getItem("userData"));
+      const id_usuario = userData[0]?.id_usuario;
+      console.log(id_usuario);
+
       event.preventDefault();
       const formData = {
         id_producto: responseDataProduct[0]?.id_producto,
-        id_cliente: localStorage.getItem("userData")?.id_usuario,
+        id_cliente: id_usuario,
       };
       fetch(import.meta.env.VITE_API_URL + "/apartarProducto", {
         method: "POST",

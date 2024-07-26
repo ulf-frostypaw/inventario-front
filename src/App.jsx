@@ -23,6 +23,7 @@ import ListApartados from "./pages/Dashboard/pages/Apartados/ListApartados";
 import CreateUser from "./pages/Dashboard/pages/Users/CreateUser";
 import EditUser from "./pages/Dashboard/pages/Users/EditUser";
 import CreateProduct from "./pages/Dashboard/pages/Products/CreateProduct";
+import Servicios from "./pages/Servicios";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/" element={<Home />} />{/*listo*/}
         <Route path="/product/:id" element={<Product />} /> {/*listo*/}
         <Route path="/articles" element={<List />} /> {/*listo*/}
+        <Route path="/request-service" element={<Servicios />} /> {/*listo*/}
 
         {/* User auth forms */}
         <Route path="/login" element={<Login />} /> {/*listo*/}
