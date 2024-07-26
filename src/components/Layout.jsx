@@ -2,7 +2,7 @@ import React from "react";
 import Title from "./Title";
 import Header from "./Header";
 import Nbar from "./Nbar";
-import Footer from './Footer/Footer';
+import Footer from './Footer'
 
 function Layout({ children, title }) {
   return (

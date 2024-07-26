@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LikeButton from "./LikeButton";
-function Card({productName = '', productDescription = '', priceSale, link = ''}) {
+function Card({productName = '', productDescription = '', priceSale, link = '', sourceImage = ''}) {  
   return (
     <div
       className={`transitionEffect relative rounded-2xl p-3 shadow-md bg-white`}
@@ -15,7 +15,7 @@ function Card({productName = '', productDescription = '', priceSale, link = ''})
           className="h-[250px] w-full lg:h-[220px]"
           to={import.meta.env.VITE_APP_URL + "/product/" + link}
         >
-          <img src="https://placehold.co/400X600" className="h-full w-full object-cover object-center" alt="" />
+          <img src={sourceImage} className="h-full w-full object-cover object-center" alt="" />
         </Link>
       </div>
       <div className="mt-3">

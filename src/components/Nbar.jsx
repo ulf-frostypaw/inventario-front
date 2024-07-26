@@ -77,9 +77,9 @@ const Nbar = () => {
             className="hidden lg:flex lg:space-x-8 lg:py-2"
             aria-label="Global"
           >
-            <TextLine redirectTo={"/articles"}>Catalogo de productos</TextLine>
+            <TextLine redirectTo={"/articles"}>Productos</TextLine>
             <TextLine redirectTo={"/request-service"}>
-              Solicitar un servicio
+              Servicios
             </TextLine>
             {userData &&
               userData[0].id_tipo_usuario &&

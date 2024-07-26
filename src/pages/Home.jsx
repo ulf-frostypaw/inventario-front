@@ -15,12 +15,12 @@ function Home() {
   return (
     <Layout title={"Inicio"}>
       <div className="container mx-auto my-12">
-        <Heading className="p-4" isCenter isMain desc="Elija el mejor clima de todos y téngalo al alcance de sus manos de forma practica y sencilla.">
-          Recomendados
+        <Heading className="p-4" isCenter isMain desc="Productos de ultima generación y hechos a su medida para mayor comodidad.">
+          Últimos productos
         </Heading>
         <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
           {productos.map((producto, index) => (
-            <Card key={index} productName={producto.nombre_producto} productDescription={producto.descripcion} priceSale={producto.precio_venta} link={producto.id_producto} />
+            <Card key={index} productName={producto.nombre_producto} productDescription={producto.descripcion} priceSale={producto.precio_costo} link={producto.id_producto} sourceImage={producto.images} />
           ))}
         </div>
       </div>

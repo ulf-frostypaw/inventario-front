@@ -39,6 +39,7 @@ function List() {
                   productDescription={item.Categoria}
                   priceSale={item.precio_venta}
                   link={item.id_producto}
+                  sourceImage={item.images}
                 />
               ))}
             </div>

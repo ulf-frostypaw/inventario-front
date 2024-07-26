@@ -7,8 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#fd5545',
+        primary: '#00A0E4',
         secondary: '#000000',
+        daikinBlack: "#231F20",
         gray: '#eeeeee',
       },
     },

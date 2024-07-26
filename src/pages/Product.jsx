@@ -45,7 +45,7 @@ export const App = () => {
           console.error("Error:", error);
         });
     }
-    const [selectedImage, setSelectedImage] = useState("https://refrimartmexico.com/uploads/productos/50-minisplit-inverter-daikin-15-ton-220v.png");
+    const [selectedImage, setSelectedImage] = useState("https://placehold.co/700");
   const handleImageClick = (imageUrl) => {
     setSelectedImage(imageUrl);
   };
@@ -71,17 +71,17 @@ export const App = () => {
                     <button
                       type="button"
                       className={`flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 ${
-                        selectedImage === "https://refrimartmexico.com/uploads/productos/50-minisplit-inverter-daikin-15-ton-220v.png"
+                        selectedImage === responseDataProduct[0]?.images
                           ? "border-gray-900"
                           : "border-transparent"
                       } text-center`}
                       onClick={() =>
-                        handleImageClick("https://refrimartmexico.com/uploads/productos/50-minisplit-inverter-daikin-15-ton-220v.png")
+                        handleImageClick(responseDataProduct[0]?.images)
                       }
                     >
                       <img
                         className="h-full w-full object-cover"
-                        src="https://refrimartmexico.com/uploads/productos/50-minisplit-inverter-daikin-15-ton-220v.png"
+                        src={responseDataProduct[0]?.images}
                         alt=""
                       />
                     </button>
