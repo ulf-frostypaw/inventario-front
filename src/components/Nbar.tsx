@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Button from "../components/Button";
+import Button from "./Button";
 import { Link } from "react-router-dom";
 import Search from "./icons/Search";
 import { AuthContext } from "./Auth/AuthContext";

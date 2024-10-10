@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import App from "./App.js";
 import { HelmetProvider } from "react-helmet-async";
-import { AuthProvider } from "./components/Auth/AuthContext.jsx";
+import { AuthProvider } from "./components/Auth/AuthContext.js";
 
 const rootElement = document.getElementById("root");
 if (rootElement) {
