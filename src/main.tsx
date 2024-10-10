@@ -4,12 +4,17 @@ import App from "./App.jsx";
 import { HelmetProvider } from "react-helmet-async";
 import { AuthProvider } from "./components/Auth/AuthContext.jsx";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <AuthProvider>
-      <HelmetProvider>
-        <App />
-      </HelmetProvider>
-    </AuthProvider>
-  </React.StrictMode>
-);
+const rootElement = document.getElementById("root");
+if (rootElement) {
+  ReactDOM.createRoot(rootElement).render(
+    <React.StrictMode>
+      <AuthProvider>
+        <HelmetProvider>
+          <App />
+        </HelmetProvider>
+      </AuthProvider>
+    </React.StrictMode>
+  );
+} else {
+  console.error("Root element not found");
+}
