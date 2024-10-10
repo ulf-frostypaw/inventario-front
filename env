@@ -1,7 +1,3 @@
-VITE_APP_URL="http://192.168.128.241"
-#VITE_API_URL="https://api.clima-polar.com"
-#VITE_APP_NAME="Clima polar"
-
-#VITE_APP_URL="https://equipo5.clima-polar.com"
-VITE_API_URL="https://api.clima-polar.com"
-VITE_APP_NAME="Clima polar"
+VITE_APP_URL="YOUR_APP_URL"
+VITE_API_URL="API_APP_URL"
+VITE_APP_NAME="APP_NAME"
