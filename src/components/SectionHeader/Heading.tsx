@@ -1,4 +1,13 @@
 import React from "react";
+interface HeadingProps{
+  children: React.ReactNode;
+  desc: string;
+  title: string | null;
+  className: any;
+  isCenter: boolean;
+  isMain: boolean;
+  props: any;
+}
 
 function Heading({
   children,
@@ -8,7 +17,7 @@ function Heading({
   isCenter = false,
   isMain,
   ...props
-}) {
+}: HeadingProps) {
   return (
     <div
       className={`relative flex flex-col justify-between sm:flex-row sm:items-end ${className}`}

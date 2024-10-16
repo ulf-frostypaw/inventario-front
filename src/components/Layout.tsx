@@ -1,10 +1,13 @@
 import React from "react";
 import Title from "./Title";
-import Header from "./Header";
 import Nbar from "./Nbar";
-import Footer from './Footer'
+import Footer from "./Footer";
 
-function Layout({ children, title }) {
+interface LayoutProps {
+  children: React.ReactNode;
+  title: string;
+}
+function Layout({ children, title }: LayoutProps) {
   return (
     <div>
       <Title title={title} />

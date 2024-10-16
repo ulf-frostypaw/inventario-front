@@ -1,16 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, SetStateAction } from "react";
 import "../index.css";
-import Visualizacion from "../components/Visualizacion";
-import Layout from "../components/Layout";
-import Nbar from "../components/Nbar";
-import Footer from "../components/Footer";
-import Button from "../components/Button";
+import Layout from "@/components/Layout";
+import Button from "@/components/Button";
 import { useParams } from "react-router-dom";
 
 export const App = () => {
   
   const { id } = useParams();
-  const [responseDataProduct, setResponseDataProduct] = useState({});
+  interface Product {
+    id_producto: number;
+    nombre_producto: string;
+    precio_costo: number;
+    descripcion: string;
+    images: string;
+  }
+
+  const [responseDataProduct, setResponseDataProduct] = useState<Product[]>([]);
 
   useEffect(() => {
     fetch(import.meta.env.VITE_API_URL + '/listProducts/' + id, {
@@ -25,10 +30,11 @@ export const App = () => {
       });
   }, [id]);
     
-    function handleSubmit(event) {
-      const userData = JSON.parse(localStorage.getItem("userData"));
+    function handleSubmit(event: { preventDefault: () => void; }) {
+      const userDataString = localStorage.getItem("userData");
+      const userData = userDataString ? JSON.parse(userDataString) : null;
       const id_usuario = userData[0]?.id_usuario;
-      console.log(id_usuario);
+      //console.log(id_usuario);
 
       event.preventDefault();
       const formData = {
@@ -53,7 +59,7 @@ export const App = () => {
         });
     }
     const [selectedImage, setSelectedImage] = useState("https://placehold.co/700");
-  const handleImageClick = (imageUrl) => {
+  const handleImageClick = (imageUrl: SetStateAction<string>) => {
     setSelectedImage(imageUrl);
   };
   return (

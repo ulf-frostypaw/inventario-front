@@ -1,11 +1,19 @@
 import React from "react";
-import Layout from "../../components/Layout";
-import SidebarFilters from "../../components/SidebarFilter";
-import Card from "../../components/Product/Card";
-import Heading from "../../components/SectionHeader/Heading";
+import Layout from "@/components/Layout";
+import SidebarFilters from "@/components/SidebarFilter";
+import Card from "@/components/Product/Card";
+import Heading from "@/components/SectionHeader/Heading";
 
+
+interface ListTypes{
+  nombre_producto: string;
+  Categoria: string;
+  precio_venta: number;
+  id_producto: string;
+  images: string[];
+}
 function List() {
-  const [data, setData] = React.useState([]);
+  const [data, setData] = React.useState<ListTypes[]>([]);
   fetch(import.meta.env.VITE_API_URL + "/listProducts", {
     method: "GET",
     headers: {
