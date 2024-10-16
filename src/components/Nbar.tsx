@@ -1,14 +1,27 @@
 import React, { useContext } from "react";
-import Button from "./Button";
 import { Link } from "react-router-dom";
-import Search from "./icons/Search";
 import { AuthContext } from "./Auth/AuthContext";
+import Button from "./Button";
+import Search from "./icons/Search";
 
-const TextLine = ({ children = [], redirectTo }) => {
+// Function to handle redirection
+function handleRedirect({ redirectTo }: { redirectTo: string }) {
+  console.log("Redirecting to:", redirectTo);
+  return redirectTo;
+}
+
+// TextLine component with corrected props
+const TextLine = ({
+  children,
+  redirectTo,
+}: {
+  children: React.ReactNode;
+  redirectTo: string;
+}) => {
   return (
     <Link
       className="hover:text-gray-600 hover:underline py-2 px-3 font-medium items-center inline-flex"
-      to={import.meta.env.VITE_APP_URL + redirectTo}
+      to={handleRedirect({ redirectTo })}
     >
       {children}
     </Link>
@@ -17,11 +30,7 @@ const TextLine = ({ children = [], redirectTo }) => {
 
 const Nbar = () => {
   const { userData, logout } = useContext(AuthContext);
-  /* if (!userData) {
-    console.error("AuthContext is undefined");
-    return null;
-  } */
-  // console.log(JSON.stringify(userData[0].id_tipo_usuario));
+
   return (
     <>
       <header className="bg-zinc-100 sticky top-0 z-10 shadow">
@@ -78,9 +87,7 @@ const Nbar = () => {
             aria-label="Global"
           >
             <TextLine redirectTo={"/articles"}>Productos</TextLine>
-            <TextLine redirectTo={"/request-service"}>
-              Servicios
-            </TextLine>
+            <TextLine redirectTo={"/request-service"}>Servicios</TextLine>
             {userData &&
               userData[0].id_tipo_usuario &&
               userData[0].id_tipo_usuario === 1 && (
