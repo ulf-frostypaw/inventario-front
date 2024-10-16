@@ -1,7 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LikeButton from "./LikeButton";
-function Card({productName = '', productDescription = '', priceSale, link = '', sourceImage = ''}) {  
+
+interface CardProps{
+  productName: string;
+  productDescription: string;
+  priceSale: number;
+  link: any;
+  sourceImage: any;
+  
+}
+function Card({productName = '', productDescription = '', priceSale = 0, link, sourceImage = ''}: CardProps) {  
   return (
     <div
       className={`transitionEffect relative rounded-2xl p-3 shadow-md bg-white`}

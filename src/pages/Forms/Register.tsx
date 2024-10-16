@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import "../../styles/Login.css";
 import { Link } from "react-router-dom";
-import Button from "../../components/Button";
-import AlertCard from "../../components/Alerts/AlertCard";
-import { AuthContext } from "../../components/Auth/AuthContext";
+import Button from "@/components/Button";
+import AlertCard from "@/components/Alerts/AlertCard";
+import { AuthContext } from "@/components/Auth/AuthContext";
 
 function Register() {
   const [email, setEmail] = useState("");
