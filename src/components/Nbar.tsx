@@ -93,7 +93,7 @@ const Nbar = () => {
               userData[0].id_tipo_usuario === 1 && (
                 <TextLine redirectTo={"/dashboard"}>Panel de control</TextLine>
               )}
-            {userData && <Button onClick={logout}>Cerrar sesión</Button>}
+            {userData && <Button variant="primary" onClick={logout}>Cerrar sesión</Button>}
           </nav>
         </div>
       </header>
