@@ -2,6 +2,8 @@ import { useContext, useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import Card from "@/components/Product/Card";
 import Heading from "@/components/SectionHeader/Heading";
+import SideBar from "./Dashboard/components/SideBarDashboard";
+
 
 interface Producto {
   nombre_producto: string;

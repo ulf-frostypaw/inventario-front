@@ -14,7 +14,7 @@ const styles = {
 
 export const Button = ({ children, variant, onClick} : ButtonProps) => {
     return (
-        <button onClick={onClick} className={"w-full py-3 px-4 sm:py-3.5 sm:px-6 text-sm sm:text-base font-medium relative h-auto inline-flex items-center justify-center rounded-lg transition-colors outline-none " + styles[variant]}>{children}</button>
+        <button onClick={onClick} className={"w-full py-2 px-3 text-xs phone:py-3 phone:px-3 phone:text-sm tablet:py-3.5 tablet:px-6 tablet:text-base font-medium relative h-auto inline-flex items-center justify-center rounded-lg transition-colors outline-none " + styles[variant]}>{children}</button>
     );
 };
 

@@ -68,7 +68,7 @@ const Nbar = () => {
               </div>
             </div>
             <div className="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center">
-              <div className="relative ml-4 inline-flex w-full gap-4">
+              <div className="relative ml-4 inline-flex w-auto h-[3rem] gap-4">
                 {!userData && (
                   <>
                     <Button variant={"secondary"}>
@@ -79,6 +79,7 @@ const Nbar = () => {
                     </Button>
                   </>
                 )}
+                {userData && <Button variant="primary" onClick={logout}>Cerrar sesión</Button>}
               </div>
             </div>
           </div>
@@ -86,14 +87,13 @@ const Nbar = () => {
             className="hidden lg:flex lg:space-x-8 lg:py-2"
             aria-label="Global"
           >
-            <TextLine redirectTo={"/articles"}>Productos</TextLine>
-            <TextLine redirectTo={"/request-service"}>Servicios</TextLine>
+            {/* <TextLine redirectTo={"/articles"}>Productos</TextLine>
+            <TextLine redirectTo={"/request-service"}>Servicios</TextLine> */}
             {userData &&
               userData[0].id_tipo_usuario &&
               userData[0].id_tipo_usuario === 1 && (
                 <TextLine redirectTo={"/dashboard"}>Panel de control</TextLine>
               )}
-            {userData && <Button variant="primary" onClick={logout}>Cerrar sesión</Button>}
           </nav>
         </div>
       </header>

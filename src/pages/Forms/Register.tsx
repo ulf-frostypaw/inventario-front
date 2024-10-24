@@ -37,9 +37,9 @@ function Register() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center w-full dark:bg-gray-950">
-      <div className="bg-white dark:bg-gray-900 shadow-xl shadow-slate-300 rounded-lg px-8 py-6 max-w-md w-full">
-        <h1 className="text-2xl font-bold text-center mb-4 dark:text-gray-200">
+    <div className="min-h-screen flex items-center justify-center w-full dark:bg-gray-950 phone:px-6 tablet:px-8">
+      <div className="bg-white dark:bg-gray-900 shadow-xl shadow-slate-300 rounded-lg px-8 py-6 max-w-xs w-full phone:max-w-sm tablet:max-w-md">
+        <h1 className="text-2xl font-bold text-center mb-4 dark:text-gray-200 phone:text-2xl tablet:text-3xl">
           Crear cuenta
         </h1>
         {data.status === 400 && (
@@ -49,14 +49,14 @@ function Register() {
           <div className="mb-4">
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-2 phone:text-sm tablet:text-base"
             >
               Nombre
             </label>
             <input
               type="text"
               name="name"
-              className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-xs phone:text-sm tablet:text-base"
               placeholder="Juan Perez"
               autoComplete="off"
               value={name}
@@ -67,14 +67,14 @@ function Register() {
           <div className="mb-4">
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-2 phone:text-sm tablet:text-base"
             >
               Correo electrónico
             </label>
             <input
               type="email"
               name="email"
-              className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-xs phone:text-sm tablet:text-base"
               placeholder="your@email.com"
               autoComplete="email"
               value={email}
@@ -85,13 +85,13 @@ function Register() {
           <div className="mb-4">
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-2 phone:text-sm tablet:text-base"
             >
               Contraseña
             </label>
             <input
               type="password"
-              className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-xs phone:text-sm tablet:text-base"
               placeholder="Enter your password"
               autoComplete="current-password"
               name="password"
@@ -103,7 +103,7 @@ function Register() {
             <div className="flex pt-4 justify-between">
               <Link
                 to="/login"
-                className="text-xs text-gray-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="text-[10px] text-gray-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 phone:text-xs tablet:text-sm"
               >
                 ¿Ya tiene una cuenta?
               </Link>
