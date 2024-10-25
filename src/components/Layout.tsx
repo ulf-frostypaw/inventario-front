@@ -1,8 +1,7 @@
 import React from "react";
 import Title from "./Title";
-import Nbar from "./Nbar";
 import Footer from "./Footer";
-import SideBar from "@/pages/Dashboard/components/SideBarDashboard";
+import Navbar from "./Navbar/Navbar";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,8 +11,7 @@ function Layout({ children, title }: LayoutProps) {
   return (
     <div>
       <Title title={title} />
-      <Nbar />
-      <SideBar/>
+      <Navbar />
       {children}
       <Footer />
     </div>

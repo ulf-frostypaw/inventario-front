@@ -1,0 +1,60 @@
+.product-card {
+    max-width: 300px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.product-images {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+.product-image {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+}
+.product-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.product-info {
+    padding: 15px;
+}
+.product-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.product-price {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+.current-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+.original-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+.discount {
+    font-size: 14px;
+    color: #00a650;
+    margin-left: 10px;
+}
+.installment {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+.free-shipping {
+    font-size: 14px;
+    color: #00a650;
+    font-weight: bold;
+}
