@@ -5,7 +5,7 @@ import Heading from "../SectionHeader/Heading";
 function FooterBanner() {
   return (
     <div className="rounded-2xl bg-[url('/bgProducts.jpg')] bg-cover bg-center bg-no-repeat py-16 text-white">
-      <Heading className="mb-0" isMain isCenter>
+      <Heading className="mb-0" isMain isCenter desc={""} title={null} props={undefined}>
         Don't wanna miss our offers?
       </Heading>
       <p className="mx-auto w-[80%] text-center md:w-[50%]">

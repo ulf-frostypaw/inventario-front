@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useContext, useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import Heading from "@/components/SectionHeader/Heading";

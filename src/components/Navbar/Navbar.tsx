@@ -23,7 +23,7 @@ function Navbar() {
               Productos
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <span className="nav-link">
               Servicios <FontAwesomeIcon icon={faChevronDown} />
             </span>
@@ -31,7 +31,7 @@ function Navbar() {
               <Link to="#">Mantenimiento preventivo</Link>
               <Link to="#">Mantenimiento correctivo</Link>
             </div>
-          </li>
+          </li> */}
         </ul>
         <div className="search-bar">
           <svg
@@ -71,13 +71,13 @@ function Navbar() {
                       <FontAwesomeIcon icon={faUser} />
                     </span>
                     <div className="dropdown-content">
-                      {userData &&
+                        {userData &&
                         userData[0].id_tipo_usuario &&
-                        userData[0].id_tipo_usuario === 1 && (
+                        userData[0].id_tipo_usuario !== 3 && (
                           <Link
-                            to={import.meta.env.VITE_APP_URL + "/dashboard"}
+                          to={import.meta.env.VITE_APP_URL + "/dashboard"}
                           >
-                            Dashboard
+                          Dashboard
                           </Link>
                         )}
                       <button onClick={logout}>Cerrar sesion</button>

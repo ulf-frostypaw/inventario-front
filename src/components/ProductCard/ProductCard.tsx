@@ -1,11 +1,16 @@
 import React from "react";
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
+interface ProductCardProps {
+  nombreProducto: string;
+  imagenProducto: string;
+  precioProducto: number;
+}
 function ProductCard({
   nombreProducto = "",
-  imagenProducto = "",
+  imagenProducto = "https://placehold.co/300",
   precioProducto = 0,
-}) {
+}:ProductCardProps) {
   return (
     <div className="product-card">
       <div className="product-images">

@@ -57,7 +57,7 @@ function Footer() {
                   </h4>
                   {footerData.footerLinks[0]?.links.map((link) => (
                     <div key={link.name}>
-                      <Link href={link.href}>{link.name}</Link>
+                      <Link to={link.href}>{link.name}</Link>
                     </div>
                   ))}
                 </div>
@@ -68,7 +68,7 @@ function Footer() {
                         <h4 className="text-2xl font-medium">{item.title}</h4>
                         {item.links.map((link) => (
                           <div key={link.name}>
-                            <Link href={link.href}>{link.name}</Link>
+                            <Link to={link.href}>{link.name}</Link>
                           </div>
                         ))}
                       </div>
@@ -82,7 +82,7 @@ function Footer() {
                   </h4>
                   {footerData.footerLinks[3]?.links.map((link) => (
                     <div key={link.name}>
-                      <Link href={link.href}>{link.name}</Link>
+                      <Link to={link.href}>{link.name}</Link>
                     </div>
                   ))}
                 </div>

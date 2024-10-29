@@ -1,6 +1,10 @@
 import Button from "./Button";
 
-const Visualizacion = ({src, alt}) => {
+interface VisualizacionProps {
+    alt: string;
+}
+
+const Visualizacion = ({ alt }: VisualizacionProps) => {
     return (
         <div className="flex m-auto w-max mt-[4rem]">
             <img className="rounded-lg" src="https://placehold.co/500x350" alt={alt} />

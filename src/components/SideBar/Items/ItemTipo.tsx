@@ -1,4 +1,4 @@
-const ItemTipo = ({ tipo }) => {
+const ItemTipo = ({ }) => {
   return (
     <>
       <div className="mt-8">

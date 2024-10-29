@@ -9,12 +9,12 @@ function Register() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  const [data, setData] = useState({});
+  const [data, setData] = useState<{ status?: number; message?: string }>({});
   const authContext = useContext(AuthContext);
 
   const { login } = authContext;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
     fetch(`${import.meta.env.VITE_API_URL}/register`, {
@@ -43,7 +43,7 @@ function Register() {
           Crear cuenta
         </h1>
         {data.status === 400 && (
-          <AlertCard message={data.message} />
+          <AlertCard message={data.message || ""} />
         )}
         <form action="" onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -110,8 +110,8 @@ function Register() {
             </div>
           </div>
 
-          <Button variant="primary" type="submit">
-            Registrarse
+          <Button variant="primary">
+            <button type="submit">Registrarse</button>
           </Button>
         </form>
       </div>

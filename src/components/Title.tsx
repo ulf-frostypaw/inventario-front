@@ -1,7 +1,11 @@
 import React from 'react'
 import {Helmet} from 'react-helmet-async'
 
-function Title({title}) {
+interface TitleProps {
+  title: string;
+}
+
+function Title({title}: TitleProps) {
   return (
     <Helmet>
         <title>

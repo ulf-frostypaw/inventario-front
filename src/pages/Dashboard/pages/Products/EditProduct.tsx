@@ -16,7 +16,7 @@ function EditProduct() {
     categoria: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     fetch(import.meta.env.VITE_API_URL + "/updateProduct", {
       method: "POST",
@@ -112,7 +112,7 @@ function EditProduct() {
                   placeholder="Stock"
                   value={userData.stock}
                   onChange={(e) =>
-                    setUserData({ ...userData, stock: e.target.value })
+                    setUserData({ ...userData, stock: Number(e.target.value) })
                   }
                   required
                 />
@@ -131,7 +131,7 @@ function EditProduct() {
                   placeholder="Precio Costo"
                   value={userData.precio_costo}
                   onChange={(e) =>
-                    setUserData({ ...userData, precio_costo: e.target.value })
+                    setUserData({ ...userData, precio_costo: Number(e.target.value) })
                   }
                   required
                 />
@@ -150,7 +150,7 @@ function EditProduct() {
                   placeholder="Precio Costo"
                   value={userData.precio_venta}
                   onChange={(e) =>
-                    setUserData({ ...userData, precio_venta: e.target.value })
+                    setUserData({ ...userData, precio_venta: Number(e.target.value) })
                   }
                   required
                 />
@@ -195,7 +195,7 @@ function EditProduct() {
               </div>
             <div className="mt-6 grid grid-cols-2 gap-4">
               <div>
-                <Button variant="primary" type="submit" className="w-full">
+                <Button variant="primary" className="w-full">
                   Guardar Cambios
                 </Button>
               </div>

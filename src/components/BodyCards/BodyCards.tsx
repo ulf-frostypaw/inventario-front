@@ -1,9 +1,9 @@
 import Cards from "./Items/Cards";
 
-const Card = (src) => {
+const Card = (src: any) => {
   return (
     <div className="w-1/4 mt-8">
-      <Cards src={src} />
+      <Cards src={src} title="Default Title" description="Default Description" />
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import Input from "@components/Inputs";
-import Button from "@components/Button";
+import Input from "@/components/Inputs";
+import Button from "@/components/Button";
 
 const FormCliente = () => {
     return (
@@ -30,7 +30,7 @@ const FormCliente = () => {
                         <option value="3" className="bg-gray-200 hover:bg-gray-300">Tecnico</option>
                     </select>
                 </label>
-                <Button variant="primary" type="submit" children="Enviar" className="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200" />
+                <Button variant="primary" children="Enviar" className="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200" />
             </form>
         </div>
     )

@@ -14,7 +14,7 @@ function CreateProduct() {
     categoria: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     fetch(import.meta.env.VITE_API_URL + "/addProduct", {
       method: "POST",
@@ -113,7 +113,7 @@ function CreateProduct() {
                   onChange={(e) =>
                     setUserData({
                       ...userData,
-                      stock: e.target.value,
+                      stock: Number(e.target.value),
                     })
                   }
                   required
@@ -135,7 +135,7 @@ function CreateProduct() {
                   onChange={(e) =>
                     setUserData({
                       ...userData,
-                      precio_costo: e.target.value,
+                      precio_costo: Number(e.target.value),
                     })
                   }
                   required
@@ -157,7 +157,7 @@ function CreateProduct() {
                   onChange={(e) =>
                     setUserData({
                       ...userData,
-                      precio_venta: e.target.value,
+                      precio_venta: Number(e.target.value),
                     })
                   }
                   required
@@ -188,7 +188,7 @@ function CreateProduct() {
             </div>
             <div className="mt-6 grid grid-cols-2 gap-4">
               <div>
-                <Button variant="primary" type="submit" className="w-full">
+                <Button variant="primary"  className="w-full">
                   Guardar Cambios
                 </Button>
               </div>

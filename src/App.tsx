@@ -31,7 +31,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />{/*listo*/}
-        <Route path="/product/:id" element={<Product />} /> {/*listo*/}
+        <Route path="/article/:id" element={<Product />} /> {/*listo*/}
         <Route path="/articles" element={<List />} /> {/*listo*/}
         <Route path="/request-service" element={<Servicios />} /> {/*listo*/}
 
@@ -60,6 +60,7 @@ function App() {
 
 
         <Route path="/dashboard/apartados" element={<ListApartados />} />{/*listo*/}
+        {/* <Route path="/dashboard/listApartados" element={<ListApartados />} /> */}
 
 
 

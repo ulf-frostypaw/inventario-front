@@ -14,7 +14,7 @@ function EditUser() {
     password: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     fetch(import.meta.env.VITE_API_URL + "/updateUser", {
       method: "POST",
@@ -55,7 +55,9 @@ function EditUser() {
           setUserData({
             email: data[0].correo_usuario,
             nombre_completo: data[0].nombre_completo,
+            username: userData.username, // Preserve existing username
             role: data[0].id_tipo_usuario || "", // Asegúrate de que el rol esté en el objeto
+            password: userData.password, // Preserve existing password
           });
         }
       });
@@ -129,7 +131,7 @@ function EditUser() {
             </div>
             <div className="mt-6 grid grid-cols-2 gap-4">
               <div>
-                <Button onClick={handleSubmit} variant="primary" type="submit" className="w-full">
+                <Button onClick={handleSubmit} variant="primary" className="w-full">
                   Guardar Cambios
                 </Button>
               </div>
