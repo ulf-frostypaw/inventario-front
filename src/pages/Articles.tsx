@@ -1,6 +1,6 @@
-import SideBar from "@components/SideBar/SideBar";
-import Nbar from "@components/Nbar";
-import BodyCards from "@components/BodyCards/BodyCards";
+import SideBar from "@/components/SideBar/SideBar";
+import Nbar from "@/components/Nbar";
+import BodyCards from "@/components/BodyCards/BodyCards";
 
 const Articles = () => {
   return (

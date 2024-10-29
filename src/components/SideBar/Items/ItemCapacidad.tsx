@@ -1,4 +1,4 @@
-const ItemCapacidad = ({ item }) => {
+const ItemCapacidad = ({ }) => {
   return (
     <>
       <div className="mt-8">

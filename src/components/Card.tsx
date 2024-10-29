@@ -2,7 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Label from "./Label";
 
-function Card({nombreProducto = "add product name here", imagenProducto, precioProducto = 0}) {
+interface CardProps {
+  nombreProducto?: string;
+  imagenProducto: string;
+  precioProducto?: number;
+}
+
+function Card({nombreProducto = "add product name here", imagenProducto, precioProducto = 0}: CardProps) {
   return (
     <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
       <Link

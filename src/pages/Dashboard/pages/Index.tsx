@@ -4,7 +4,12 @@ import Tables from "../components/Tables";
 
 function Index() {
   // aqui vienen los datos estadisticos del panel de administracion
-  const [responseData, setResponseData] = useState({});
+  interface ResponseData {
+    countUsers: number;
+    countProducts: number;
+  }
+
+  const [responseData, setResponseData] = useState<ResponseData>({ countUsers: 0, countProducts: 0 });
   useEffect(() => {
     fetch(import.meta.env.VITE_API_URL + "/countData", {
       method: "GET",

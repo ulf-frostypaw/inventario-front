@@ -4,8 +4,7 @@ import Tables from "../../components/Tables";
 import { Link } from "react-router-dom";
 import Button from "../../../../components/Button";
 
-function handleDeleteProduct(id_producto) {
-  //console.log(id_producto);
+function handleDeleteProduct(id_producto: any) {
   fetch(import.meta.env.VITE_API_URL + "/deleteProduct", {
     method: "POST",
     headers: {
@@ -23,8 +22,17 @@ function handleDeleteProduct(id_producto) {
       }
     });
 }
+
 function ListProducts() {
-  const [listUsers, setListUsers] = React.useState([]);
+  interface Product {
+    id_producto: number;
+    nombre_producto: string;
+    stock: number;
+    Categoria: string;
+  }
+
+  const [listUsers, setListUsers] = React.useState<Product[]>([]);
+  
   React.useEffect(() => {
     fetch(import.meta.env.VITE_API_URL + "/listProducts", {
       method: "GET",
@@ -35,13 +43,11 @@ function ListProducts() {
       .then((response) => response.json())
       .then((listUsers) => {
         setListUsers(listUsers);
-        /* listUsers.forEach((item) => {
-          console.log(JSON.stringify(item.id_producto));
-        }); */
       });
   }, []);
+  
   return (
-    <DashboardLayout title="Usuarios">
+    <DashboardLayout title="Productos">
       <div className="flex-grow p-6 ml-[235px] flex flex-wrap justify-center items-start container mx-auto ">
         <div className="w-full flex justify-end mb-4">
           <Button variant={"primary"}>
@@ -57,34 +63,26 @@ function ListProducts() {
           <div className="w-full bg-white p-6 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold mb-4">Listado de productos</h2>
 
-            <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
-              <thead className="bg-gray-100">
-                <tr>
-                  <th className="py-2 px-4 border-b border-gray-200">Nombre</th>
-                  <th className="py-2 px-4 border-b border-gray-200">Stock</th>
-                  <th className="py-2 px-4 border-b border-gray-200">
-                    Categoría
-                  </th>
-                  <th className="py-2 px-4 border-b border-gray-200">
-                    Acciones
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {listUsers.map((item, index) => (
-                  <tr key={index}>
-                    <td className="py-2 px-4 border-b border-gray-200 text-center">
-                      {item.nombre_producto}
-                    </td>
-                    <td className="py-2 px-4 border-b border-gray-200 text-center">
-                      {item.stock}
-                    </td>
-                    <td className="py-2 px-4 border-b border-gray-200 text-center">
-                      {item.Categoria}
-                    </td>
-                    <td className="py-2 px-4 border-b border-gray-200 text-center">
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
+            {/* Responsive Wrapper */}
+            <div className="overflow-x-auto">
+              <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="py-2 px-4 border-b border-gray-200">Nombre</th>
+                    <th className="py-2 px-4 border-b border-gray-200">Stock</th>
+                    <th className="py-2 px-4 border-b border-gray-200">Categoría</th>
+                    <th className="py-2 px-4 border-b border-gray-200">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {listUsers.map((item) => (
+                    <tr key={item.id_producto}>
+                      <td className="py-2 px-4 border-b border-gray-200 text-center">{item.nombre_producto}</td>
+                      <td className="py-2 px-4 border-b border-gray-200 text-center">{item.stock}</td>
+                      <td className="py-2 px-4 border-b border-gray-200 text-center">{item.Categoria}</td>
+                      <td className="py-2 px-4 border-b border-gray-200 text-center">
+                        {/* Responsive Button Grid */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <Button variant={"primary"}>
                             <Link
                               to={
@@ -96,23 +94,19 @@ function ListProducts() {
                               Modificar
                             </Link>
                           </Button>
-                        </div>
-                        <div>
                           <Button
                             variant={"danger"}
-                            onClick={() =>
-                              handleDeleteProduct(item.id_producto)
-                            }
+                            onClick={() => handleDeleteProduct(item.id_producto)}
                           >
                             Eliminar
                           </Button>
                         </div>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div> {/* End of Responsive Wrapper */}
           </div>
         </Tables>
       </div>

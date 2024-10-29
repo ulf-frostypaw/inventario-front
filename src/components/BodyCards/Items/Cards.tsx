@@ -1,7 +1,13 @@
 import React from "react";
 import Button from "../../Button";
 
-const cards = ({src, title, description}) => {
+interface CardProps {
+  src: string;
+  title: string;
+  description: string;
+}
+
+const cards: React.FC<CardProps> = ({ src, title, description }) => {
   return (
     <>
       <div className="basis-1/5 bg-white p-4 shadow-lg shadow-gray-400 rounded-lg w-[16rem]">

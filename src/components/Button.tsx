@@ -1,8 +1,10 @@
 import '../index.css';
-interface ButtonProps{
+interface ButtonProps {
     children: React.ReactNode;
     variant: "succses" | "danger" | "default" | "primary" | "secondary";
-    onClick?: () => void;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
+    className?: string;
+    value?: any;
 }
 const styles = {
     succses: "bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-700 w-full",
@@ -12,9 +14,9 @@ const styles = {
     secondary: "text-white bg-secondary hover:bg-secondary/80 disabled:bg-opacity-70",
 };
 
-export const Button = ({ children, variant, onClick} : ButtonProps) => {
+export const Button = ({ children, variant, onClick, className, value} : ButtonProps) => {
     return (
-        <button onClick={onClick} className={"w-full py-2 px-3 text-xs phone:py-3 phone:px-3 phone:text-sm tablet:py-3.5 tablet:px-6 tablet:text-base font-medium relative h-auto inline-flex items-center justify-center rounded-lg transition-colors outline-none " + styles[variant]}>{children}</button>
+        <button onClick={onClick} className={"w-full py-2 px-3 text-xs phone:py-3 phone:px-3 phone:text-sm tablet:py-3.5 tablet:px-6 tablet:text-base font-medium relative h-auto inline-flex items-center justify-center rounded-lg transition-colors outline-none " + styles[variant] + " " + className}>{children}</button>
     );
 };
 

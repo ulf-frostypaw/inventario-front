@@ -1,4 +1,6 @@
-const Button = ({ children }) => {
+import { ReactNode } from 'react';
+
+const Button = ({ children }: { children: ReactNode }) => {
     return (
       <button className="text-base sm:text-lg flex justify-center bg-blue-500 text-white px-2 sm:px-3 rounded-lg hover:bg-blue-700 w-auto">
         {children}

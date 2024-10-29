@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 
-function LikeButton({className}) {
+interface LikeButtonProps {
+  className: string;
+}
+
+function LikeButton({ className }: LikeButtonProps) {
   const liked = false;
   const [isLiked, setIsLiked] = useState(liked);
 

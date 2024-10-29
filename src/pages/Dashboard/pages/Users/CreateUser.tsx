@@ -13,7 +13,7 @@ function CreateUser() {
     password: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     fetch(import.meta.env.VITE_API_URL + "/createUser", {
       method: "POST",
@@ -38,7 +38,7 @@ function CreateUser() {
         }
       })
       .catch((error) => {
-        console.error("Error:", error);
+        console.error("Error:", JSON.stringify(error));
         alert("Hubo un problema al crear el usuario.");
       });
   };
@@ -146,7 +146,7 @@ function CreateUser() {
               <div>
                 <Button
                   variant="primary"
-                  type="submit"
+                  
                   className="w-full"
                 >
                   Guardar Cambios
