@@ -93,7 +93,7 @@ function Register() {
               type="password"
               className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-xs phone:text-sm tablet:text-base"
               placeholder="Enter your password"
-              autoComplete="current-password"
+              autoComplete="current-pasword"
               name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
