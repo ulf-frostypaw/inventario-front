@@ -23,7 +23,7 @@ import ListApartados from "./pages/Dashboard/pages/Apartados/ListApartados";
 import CreateUser from "./pages/Dashboard/pages/Users/CreateUser";
 import EditUser from "./pages/Dashboard/pages/Users/EditUser";
 import CreateProduct from "./pages/Dashboard/pages/Products/CreateProduct";
-import Servicios from "./pages/Servicios";
+import Servicios from "./pages/Servicios/Servicios";
 
 
 function App() {

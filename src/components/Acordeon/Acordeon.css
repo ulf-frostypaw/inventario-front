@@ -1,0 +1,46 @@
+.accordion {
+    width: 100%;
+    max-width: 570px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .hrAcor {
+    width: 100%;
+    height: 2px;
+    color: #a1a1a1;
+  }
+  
+  .accordion-header {
+    width: 100%;
+    padding: 1.3rem 1rem;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .accordion-header:hover {
+    background-color: #e1e1e1;
+  }
+  
+  .accordion-header.active {
+    background-color: #e0e0e0;
+  }
+  
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 15px;
+    background-color: #fff;
+  }
+  
+  .accordion-content.open {
+    max-height: 200px;
+    padding: 15px;
+  }
+  

@@ -24,9 +24,11 @@ function Navbar() {
             </Link>
           </li>
             <li className="nav-item">
-            <span className="nav-link">
+            <Link
+            to = {import.meta.env.VITE_APP_URL + "/request-service"}
+            className="nav-link" >
               Servicios <FontAwesomeIcon icon={faChevronDown} />
-            </span>
+            </Link>
             <div className="dropdown-content">
               <Link to="#">Mantenimiento preventivo</Link>
               <Link to="#">Mantenimiento correctivo</Link>
