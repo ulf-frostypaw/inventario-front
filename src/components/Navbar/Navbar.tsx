@@ -23,7 +23,7 @@ function Navbar() {
               Productos
             </Link>
           </li>
-          {/* <li className="nav-item">
+            <li className="nav-item">
             <span className="nav-link">
               Servicios <FontAwesomeIcon icon={faChevronDown} />
             </span>
@@ -31,7 +31,7 @@ function Navbar() {
               <Link to="#">Mantenimiento preventivo</Link>
               <Link to="#">Mantenimiento correctivo</Link>
             </div>
-          </li> */}
+          </li>
         </ul>
         <div className="search-bar">
           <svg
