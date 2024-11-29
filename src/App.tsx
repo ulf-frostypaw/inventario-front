@@ -24,6 +24,10 @@ import CreateUser from "./pages/Dashboard/pages/Users/CreateUser";
 import EditUser from "./pages/Dashboard/pages/Users/EditUser";
 import CreateProduct from "./pages/Dashboard/pages/Products/CreateProduct";
 import Servicios from "./pages/Servicios/Servicios";
+import Vision from "./pages/Extra/Vision";
+import Contacto from "./pages/Extra/Contacto";
+import Mision from "./pages/Extra/Mision";
+import QuienesSomos from "./pages/Extra/QuienesSomos";
 
 
 function App() {
@@ -31,6 +35,13 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />{/*listo*/}
+
+        {/* NUEVAS SECCIONES DEL TRABAJO */}
+        <Route path="/quienes-somos" element={<QuienesSomos />} />
+        <Route path="/mision" element={<Mision />} />
+        <Route path="/vision" element={<Vision />} />
+        <Route path="/contacto" element={<Contacto />} />
+
         <Route path="/article/:id" element={<Product />} /> {/*listo*/}
         <Route path="/articles" element={<List />} /> {/*listo*/}
         <Route path="/request-service" element={<Servicios />} /> {/*listo*/}

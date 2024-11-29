@@ -23,16 +23,27 @@ function Navbar() {
               Productos
             </Link>
           </li>
+
+          <li className="nav-item">
+            <Link
+              to={import.meta.env.VITE_APP_URL + "/quienes-somos"}
+              className="nav-link"
+            >
+              Acerca de <FontAwesomeIcon icon={faChevronDown} />
+            </Link>
+            <div className="dropdown-content">
+              <Link to={import.meta.env.VITE_APP_URL + "/quienes-somos"}>¿Quienes somos?</Link>
+              <Link to={import.meta.env.VITE_APP_URL + "/mision"}>Nuestra mision</Link>
+              <Link to={import.meta.env.VITE_APP_URL + "/vision"}>Nuestra vision</Link>
+              <Link to={import.meta.env.VITE_APP_URL + "/contacto"}>Contacto</Link>
+            </div>
+          </li>
             <li className="nav-item">
             <Link
             to = {import.meta.env.VITE_APP_URL + "/request-service"}
             className="nav-link" >
-              Servicios <FontAwesomeIcon icon={faChevronDown} />
+              Servicios
             </Link>
-            <div className="dropdown-content">
-              <Link to="#">Mantenimiento preventivo</Link>
-              <Link to="#">Mantenimiento correctivo</Link>
-            </div>
           </li>
         </ul>
         <div className="search-bar">
