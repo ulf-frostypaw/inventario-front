@@ -40,7 +40,7 @@ function Register() {
     <div className="min-h-screen flex items-center justify-center w-full dark:bg-gray-950 phone:px-6 tablet:px-8">
       <div className="bg-white dark:bg-gray-900 shadow-xl shadow-slate-300 rounded-lg px-8 py-6 max-w-xs w-full phone:max-w-sm tablet:max-w-md">
         <h1 className="text-2xl font-bold text-center mb-4 dark:text-gray-200 phone:text-2xl tablet:text-3xl">
-          Crear cuenta
+          Registrate
         </h1>
         {data.status === 400 && (
           <AlertCard message={data.message || ""} />

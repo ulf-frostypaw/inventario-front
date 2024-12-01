@@ -24,10 +24,10 @@ import CreateUser from "./pages/Dashboard/pages/Users/CreateUser";
 import EditUser from "./pages/Dashboard/pages/Users/EditUser";
 import CreateProduct from "./pages/Dashboard/pages/Products/CreateProduct";
 import Servicios from "./pages/Servicios/Servicios";
-import Vision from "./pages/Extra/Vision";
-import Contacto from "./pages/Extra/Contacto";
-import Mision from "./pages/Extra/Mision";
-import QuienesSomos from "./pages/Extra/QuienesSomos";
+import Vision from "./pages/Extra/Vision/Vision";
+import Contacto from "./pages/Extra/Contacto/Contacto";
+import Mision from "./pages/Extra/Mision/Mision";
+import QuienesSomos from "./pages/Extra/QuienesSomos/QuienesSomos";
 
 
 function App() {
