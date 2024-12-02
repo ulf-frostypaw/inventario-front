@@ -23,7 +23,7 @@ function handleDeleteUser(event: React.MouseEvent<HTMLButtonElement>) {
     });
 }
 
-function ListUsers() {
+function ListClients() {
   interface User {
     id_usuario: number;
     nombre_completo: string;
@@ -47,19 +47,13 @@ function ListUsers() {
   }, []);
   
   return (
-    <DashboardLayout title="Usuarios">
+    <DashboardLayout title="Clientes">
       <div className="flex-grow p-6 ml-[235px] flex flex-wrap justify-center items-start container mx-auto ">
-        <div className="w-full flex justify-end mb-4">
-          <Button variant={"primary"}>
-            <Link to={import.meta.env.VITE_APP_URL + "/dashboard/users/createUser"}>
-              Agregar Usuario
-            </Link>
-          </Button>
-        </div>
+        
 
         <Tables>
           <div className="w-full bg-white p-6 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold mb-4">Listado de usuarios</h2>
+            <h2 className="text-2xl font-bold mb-4">Listado de clientes</h2>
 
             {/* Responsive Wrapper */}
             <div className="overflow-x-auto">
@@ -69,7 +63,6 @@ function ListUsers() {
                     <th className="py-2 px-4 border-b border-gray-200">Nombre</th>
                     <th className="py-2 px-4 border-b border-gray-200">Correo</th>
                     <th className="py-2 px-4 border-b border-gray-200">Tipo de usuario</th>
-                    <th className="py-2 px-4 border-b border-gray-200">Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -87,22 +80,6 @@ function ListUsers() {
                             <td className="py-2 px-4 border-b border-gray-200 text-center">{user.rol}</td>
                             <td className="py-2 px-4 border-b border-gray-200 text-center">
                               {/* Responsive Button Grid */}
-                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <Button variant={"primary"}>
-                                  <Link to={import.meta.env.VITE_APP_URL + "/dashboard/users/editUser/" + user.id_usuario}>
-                                    Modificar
-                                  </Link>
-                                </Button>
-                                <Button variant={"danger"}>
-                                  <button
-                                    onClick={handleDeleteUser}
-                                    value={user.id_usuario}
-                                    className="w-full h-full"
-                                  >
-                                    Eliminar
-                                  </button>
-                                </Button>
-                              </div>
                             </td>
                           </tr>
                         ))
@@ -118,4 +95,4 @@ function ListUsers() {
   );
 }
 
-export default ListUsers; 
+export default ListClients; 

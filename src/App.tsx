@@ -16,7 +16,7 @@ import AddUsers from "./pages/Dashboard/pages/Users/CreateUser";
 
 // error pages
 import NotFound from "./pages/Error/NotFound";
-import ListUsers from "./pages/Dashboard/pages/Users/ListUsers";
+import ListUsers from "./pages/Dashboard/pages/Clientes/ListUsers";
 import ListProducts from "./pages/Dashboard/pages/Products/ListProducts";
 import EditProduct from "./pages/Dashboard/pages/Products/EditProduct";
 import ListApartados from "./pages/Dashboard/pages/Apartados/ListApartados";
@@ -28,6 +28,7 @@ import Vision from "./pages/Extra/Vision/Vision";
 import Contacto from "./pages/Extra/Contacto/Contacto";
 import Mision from "./pages/Extra/Mision/Mision";
 import QuienesSomos from "./pages/Extra/QuienesSomos/QuienesSomos";
+import ListClients from "./pages/Dashboard/pages/Users/ListClients";
 
 
 function App() {
@@ -55,12 +56,12 @@ function App() {
 
 
         <Route path="/dashboard/users" element={<ListUsers />} /> {/*listo*/}
+        <Route path="/dashboard/clientes" element={<ListClients />} /> {/*listo*/}
         <Route path="/dashboard/users/addUser" element={<CreateUser />} />
         {/*<Route path="/dashboard/users/editUser/:id" element={<AddUsers />} /> */}
 
         <Route path="/dashboard/products" element={<ListProducts />} /> {/*listo*/}
         <Route path="/dashboard/products/edit/:id" element={<EditProduct />} />
-        <Route path="/dashboard/users" element={<ListUsers />} />
         <Route path="/dashboard/users/createUser" element={<CreateUser />} />
         <Route path="/dashboard/users/editUser/:id" element={<EditUser />} />
 

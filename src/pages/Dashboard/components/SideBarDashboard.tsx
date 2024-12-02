@@ -25,7 +25,7 @@ const Sidebar = () => {
   useEffect(() => {
     // Redirigir al cliente si su rol es 3
     if (userData[0]?.id_tipo_usuario === 3) {
-      navigate('http://localhost.com');
+      navigate(import.meta.env.VITE_APP_URL);
     }
   }, [userData]);
 
@@ -102,7 +102,27 @@ const Sidebar = () => {
                 </Link>
               </li>
             )}
+            
+            {shouldShowMenuItem([1]) && (
+              <li className="flex items-center text-white  bg-[#4f6369] cursor-pointer">
+                <span className="text-sm p-4 w-full">
+                  <FontAwesomeIcon icon={faColumns} className="mr-3" />
+                  Administrar usuarios
+                </span>
+              </li>
+            )}
 
+            {shouldShowMenuItem([1]) && (
+              <li className="flex hover:bg-[#4f6379] text-white cursor-pointer items-center">
+                <Link
+                  className="text-sm p-4 w-full"
+                  to={urlApp + "/dashboard/clientes"}
+                >
+                  <FontAwesomeIcon icon={faUser} className="mr-3" />
+                  Clientes
+                </Link>
+              </li>
+            )}
             {shouldShowMenuItem([1]) && (
               <li className="flex hover:bg-[#4f6379] text-white cursor-pointer items-center">
                 <Link
@@ -110,7 +130,7 @@ const Sidebar = () => {
                   to={urlApp + "/dashboard/users"}
                 >
                   <FontAwesomeIcon icon={faUser} className="mr-3" />
-                  Administrar usuarios
+                  Usuarios
                 </Link>
               </li>
             )}
