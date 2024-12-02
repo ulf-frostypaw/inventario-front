@@ -56,7 +56,7 @@ function App() {
 
         <Route path="/dashboard/users" element={<ListUsers />} /> {/*listo*/}
         <Route path="/dashboard/users/addUser" element={<CreateUser />} />
-        <Route path="/dashboard/users/editUser/:id" element={<AddUsers />} />
+        {/*<Route path="/dashboard/users/editUser/:id" element={<AddUsers />} /> */}
 
         <Route path="/dashboard/products" element={<ListProducts />} /> {/*listo*/}
         <Route path="/dashboard/products/edit/:id" element={<EditProduct />} />

@@ -73,32 +73,41 @@ function ListUsers() {
                   </tr>
                 </thead>
                 <tbody>
-                  {listUsers.map((user) => (
-                    <tr key={user.id_usuario}>
-                      <td className="py-2 px-4 border-b border-gray-200 text-center">{user.nombre_completo}</td>
-                      <td className="py-2 px-4 border-b border-gray-200 text-center">{user.correo_usuario}</td>
-                      <td className="py-2 px-4 border-b border-gray-200 text-center">{user.rol}</td>
-                      <td className="py-2 px-4 border-b border-gray-200 text-center">
-                        {/* Responsive Button Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                          <Button variant={"primary"}>
-                            <Link to={import.meta.env.VITE_APP_URL + "/dashboard/users/editUser/" + user.id_usuario}>
-                              Modificar
-                            </Link>
-                          </Button>
-                          <Button variant={"danger"}>
-                            <button
-                              onClick={handleDeleteUser}
-                              value={user.id_usuario}
-                              className="w-full h-full"
-                            >
-                              Eliminar
-                            </button>
-                          </Button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
+                {(() => {
+                    const userDataString = localStorage.getItem('userData');
+                    const userData = userDataString ? JSON.parse(userDataString) : null;
+
+                    return userData && userData[0].id_tipo_usuario === 1 
+                      ? listUsers
+                        .filter(user => user.rol === 'cliente')
+                        .map((user) => (
+                          <tr key={user.id_usuario}>
+                            <td className="py-2 px-4 border-b border-gray-200 text-center">{user.nombre_completo}</td>
+                            <td className="py-2 px-4 border-b border-gray-200 text-center">{user.correo_usuario}</td>
+                            <td className="py-2 px-4 border-b border-gray-200 text-center">{user.rol}</td>
+                            <td className="py-2 px-4 border-b border-gray-200 text-center">
+                              {/* Responsive Button Grid */}
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <Button variant={"primary"}>
+                                  <Link to={import.meta.env.VITE_APP_URL + "/dashboard/users/editUser/" + user.id_usuario}>
+                                    Modificar
+                                  </Link>
+                                </Button>
+                                <Button variant={"danger"}>
+                                  <button
+                                    onClick={handleDeleteUser}
+                                    value={user.id_usuario}
+                                    className="w-full h-full"
+                                  >
+                                    Eliminar
+                                  </button>
+                                </Button>
+                              </div>
+                            </td>
+                          </tr>
+                        ))
+                      : null
+                  })()}
                 </tbody>
               </table>
             </div> {/* End of Responsive Wrapper */}

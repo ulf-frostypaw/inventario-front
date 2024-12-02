@@ -64,7 +64,7 @@ function EditUser() {
   }, [id]);
 
   return (
-    <DashboardLayout title="Agregar Usuarios">
+    <DashboardLayout title="Editar usuario">
       <div className="flex-grow p-6 ml-[235px] flex flex-wrap justify-center items-start container mx-auto ">
         <div className="w-full mx-auto bg-white dark:bg-gray-900 shadow-lg shadow-slate-600 rounded-lg p-8">
           <h1 className="text-2xl font-bold mb-6 dark:text-gray-200">Editar usuario</h1>
@@ -125,7 +125,8 @@ function EditUser() {
                   <option value="1">Administrador</option>
                   <option value="2">Técnico</option>
                   <option value="3">Cliente</option>
-                  <option value="4">Secretaria</option>
+                  <option value="4">Secretaria ventas</option>
+                  <option value="5">Secretaria compras</option>
                 </select>
               </div>
             </div>

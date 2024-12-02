@@ -138,7 +138,8 @@ function CreateUser() {
                   <option value="1">Administrador</option>
                   <option value="2">Técnico</option>
                   <option value="3">Cliente</option>
-                  <option value="4">Secretaria</option>
+                  <option value="4">Secretaria venta</option>
+                  <option value="5">Secretaria compra</option>
                 </select>
               </div>
             </div>
