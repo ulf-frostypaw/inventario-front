@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "@/components/Layout";
-import SidebarFilters from "@/components/SidebarFilter";
+import SidebarFilters from "@/components/SideBarFilter/SidebarFilter";
 import Card from "@/components/Product/Card";
 import Heading from "@/components/SectionHeader/Heading";
 

@@ -1,7 +1,7 @@
 .accordion {
     width: 100%;
     max-width: 570px;
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
     overflow: hidden;
   }
 

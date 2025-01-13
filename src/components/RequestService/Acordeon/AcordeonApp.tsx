@@ -1,5 +1,5 @@
 import React from "react";
-import Acordeon from "@/components/Acordeon/Acordeon";
+import Acordeon from "@/components/RequestService/Acordeon/Acordeon";
 
 const AcordeonApp: React.FC = () => {
   const items = [
