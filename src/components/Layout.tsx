@@ -7,12 +7,20 @@ interface LayoutProps {
   children: React.ReactNode;
   title: string;
 }
+
 function Layout({ children, title }: LayoutProps) {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
+      {/* Título de la página */}
       <Title title={title} />
+      
+      {/* Barra de navegación */}
       <Navbar />
-      {children}
+      
+      {/* Contenido principal */}
+      <main className="flex-1">{children}</main>
+      
+      {/* Pie de página */}
       <Footer />
     </div>
   );
