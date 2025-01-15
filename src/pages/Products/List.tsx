@@ -28,7 +28,7 @@ function List() {
     .catch((error) => console.error("Error:", error));
   return (
     <Layout title={"Productos"}>
-      <div className="container mx-auto">
+      <div className="container mx-auto flex">
         <div className="container relative flex flex-col lg:flex-row" id="body">
           <div className="pr-4 pt-10 lg:basis-1/3 xl:basis-1/4">
             <SidebarFilters />

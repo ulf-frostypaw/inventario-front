@@ -17,8 +17,10 @@ function Layout({ children, title }: LayoutProps) {
       {/* Barra de navegación */}
       <Navbar />
       
-      {/* Contenido principal */}
-      <main className="flex-1">{children}</main>
+      {/* Contenido centrado */}
+      <main className="flex-1 flex items-center justify-center">
+        {children}
+      </main>
       
       {/* Pie de página */}
       <Footer />
