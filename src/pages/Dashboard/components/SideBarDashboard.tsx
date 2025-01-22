@@ -11,6 +11,7 @@ import {
   faSignOutAlt,
   faBars,
   faChevronLeft,
+  faBagShopping,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from '@/components/Auth/AuthContext' // Ajusta la ruta según tu estructura
@@ -18,7 +19,6 @@ import { AuthContext } from '@/components/Auth/AuthContext' // Ajusta la ruta se
 const Sidebar = () => {
   const urlApp = import.meta.env.VITE_APP_URL;
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = useState(true);
   const { userData } = useContext(AuthContext); // Usando el contexto de autenticación
 
   //console.log(userData[0]?.id_tipo_usuario);
@@ -28,10 +28,6 @@ const Sidebar = () => {
       navigate(import.meta.env.VITE_APP_URL);
     }
   }, [userData]);
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
 
   // Función para determinar si un elemento debe mostrarse según el rol
   const shouldShowMenuItem = (allowedRoles: string | any[]) => {
@@ -46,11 +42,7 @@ const Sidebar = () => {
   return (
     <div className="h-screen">
       <div
-        className={`w-64 bg-[#061c33] fixed h-full flex flex-col ${
-          isOpen
-            ? "translate-x-0 transition-transform duration-300"
-            : "-translate-x-[80%] transition-transform duration-300"
-        }`}
+        className={`w-64 bg-[#061c33] fixed h-full flex flex-col`}
       >
         <div className="flex items-center justify-start text-white text-2xl font-bold py-4">
           <img
@@ -146,22 +138,22 @@ const Sidebar = () => {
                 </Link>
               </li>
             )}
+            
+            {shouldShowMenuItem([1, 4]) && (
+              <li className="flex items-center text-white hover:bg-[#4f6379] cursor-pointer">
+                <Link
+                  className="text-sm p-4 w-full"
+                  to={urlApp + "/dashboard/compras"}
+                >
+                  <FontAwesomeIcon icon={faBagShopping} className="mr-3" />
+                  Compras
+                </Link>
+              </li>
+            )}
           </ul>
         </nav>
-        <div className="absolute bottom-4 right-4 mr-1">
-          <button onClick={toggleSidebar} className="cursor-pointer text-white">
-            <FontAwesomeIcon
-              className={`text-2xl ${
-                isOpen
-                  ? "rotate-0 transition-transform duration-300"
-                  : "rotate-180 transition-transform duration-300"
-              }`}
-              icon={faChevronLeft}
-            />
-          </button>
         </div>
       </div>
-    </div>
   );
 };
 

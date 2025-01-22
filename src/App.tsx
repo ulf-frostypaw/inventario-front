@@ -29,6 +29,7 @@ import Contacto from "./pages/Extra/Contacto/Contacto";
 import Mision from "./pages/Extra/Mision/Mision";
 import QuienesSomos from "./pages/Extra/QuienesSomos/QuienesSomos";
 import ListClients from "./pages/Dashboard/pages/Users/ListClients";
+import LeerCompras from "./pages/Comras/LeerCompras";
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <Route path="/mision" element={<Mision />} />
         <Route path="/vision" element={<Vision />} />
         <Route path="/contacto" element={<Contacto />} />
+
 
         <Route path="/article/:id" element={<Product />} /> {/*listo*/}
         <Route path="/articles" element={<List />} /> {/*listo*/}
@@ -64,6 +66,9 @@ function App() {
         <Route path="/dashboard/products/edit/:id" element={<EditProduct />} />
         <Route path="/dashboard/users/createUser" element={<CreateUser />} />
         <Route path="/dashboard/users/editUser/:id" element={<EditUser />} />
+
+        <Route path="/dashboard/compras" element={<LeerCompras />} />
+
 
         <Route path="/dashboard/products" element={<ListProducts />} />
         <Route path="/dashboard/products/createProduct" element={<CreateProduct />} />
