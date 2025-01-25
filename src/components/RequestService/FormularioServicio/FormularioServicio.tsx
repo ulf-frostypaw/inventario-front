@@ -11,7 +11,26 @@ function handleFormServices(e: React.FormEvent<HTMLFormElement>) {
     data[key] = value as string;
   });
 
-  console.log(data);
+  //console.log(data);
+
+  try {
+    const response = fetch(import.meta.env.VITE_API_URL + "/request-service", {
+      method: 'POST',
+      headers: {
+        "Content-Type": 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then((response) => response.json())
+        .then((responseData) => {
+          alert(responseData?.message);
+        })
+
+    
+  } catch (error) {
+    console.log("Error: " + error)
+    
+  }
 }
 
 const FormularioServicio = () => {

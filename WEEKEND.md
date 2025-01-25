@@ -1,5 +1,5 @@
 ## Por hacer
--Se conectara el formulario de servicios a la base de datos de servicios
+[-] Se conectara el formulario de servicios a la base de datos de servicios
 para que la informacion se guarde y se le asigne un tecnico aleatorio el cual no este ocupado
 y aparezca en el perfil del tecnico una nueva notificacion con la informacion del servicio.
 
