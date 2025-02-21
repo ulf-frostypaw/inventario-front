@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import Heading from "@/components/SectionHeader/Heading";
 import ProductCard from "@/components/ProductCard/ProductCard";
 
+
 interface Producto {
   nombre_producto: string;
   descripcion: string;
